@@ -11,42 +11,75 @@ import {
   Menu,
   Segment,
   Visibility,
-  Form
+  Form,
+  Modal
 } from 'semantic-ui-react'
 
-const FixedMenu = () => (
-  <Menu fixed='top' size='large' >
-    <Container>
-    <Menu.Item as='a' active>EngineOne</Menu.Item>
-    <Menu.Item as='a'>Pricing</Menu.Item>
-    <Menu.Item as='a'>Downloads</Menu.Item>
-    <Menu.Item as='a'>Docs</Menu.Item>
-    <Menu.Item position='right'>
-    <Button primary  size='huge'>
-      <Icon name='cloud download' />
-      Get Early Access
-    </Button>
-    </Menu.Item>
-    </Container>
-  </Menu>
-)
-
 export default class HomepageLayout extends Component {
-  state = {}
+  state = { open: false }
+  
+  show = () => this.setState({ open: true })
+  close = () => this.setState({ open: false })
 
   hideFixedMenu = () => this.setState({ visible: false })
   showFixedMenu = () => this.setState({ visible: true })
 
-  calpopup = () => {
-    window.Calendly.showPopupWidget('https://calendly.com/timosolo/30min');
-  }
-
   render() {
-    const { visible } = this.state
+    const { visible, open } = this.state
 
     return (
       <div>
-        { visible ? <FixedMenu /> : null }
+
+<Modal size="small" open={open} onClose={this.close} closeIcon>
+    <Header icon='mail outline' content='Sign Up for Early Access' />
+    <Modal.Content>
+      <p>
+      Sign up now to be notified about the early access release program.<br/>
+Space is limited so book your spot now. <br/>
+We’re really excited about what EngineOne can do for you! 
+
+      </p>
+
+      <Form action="https://lepsta.us17.list-manage.com/subscribe/post?u=e8b7064010b896656512ed4a7&amp;id=978ff8a33a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"  target="_blank">
+    <Form.Field>
+      <label>Full Name</label>
+      <input name="FNAME" placeholder='Full Name' />
+    </Form.Field>
+    <Form.Field>
+      <label>Email</label>
+      <input name="EMAIL" required type="email" placeholder='Email Address' />
+    </Form.Field>
+    <div style={{position: "absolute", left: "-5000px"}} aria-hidden="true"><input type="text" name="b_e8b7064010b896656512ed4a7_978ff8a33a" tabindex="-1" value="" /></div>
+    <Button type='submit' color='green'>
+        <Icon name='checkmark' />Sign Up
+    </Button>
+  </Form>
+
+
+    </Modal.Content>
+    {/* <Modal.Actions>
+      <Button color='green'>
+        <Icon name='checkmark' /> Sign Up
+      </Button>
+    </Modal.Actions> */}
+  </Modal>
+
+        { visible ? 
+          <Menu fixed='top' size='large' >
+          <Container>
+          <Menu.Item as='a' active>EngineOne</Menu.Item>
+          <Menu.Item as='a'>Pricing</Menu.Item>
+          <Menu.Item as='a'>Downloads</Menu.Item>
+          <Menu.Item as='a'>Docs</Menu.Item>
+          <Menu.Item position='right'>
+          <Button primary  size='huge'  onClick={this.show}>
+            <Icon name='cloud download' />
+            Get Early Access
+          </Button>
+          </Menu.Item>
+          </Container>
+        </Menu>
+          : null }
 
         <Visibility
           onBottomPassed={this.showFixedMenu}
@@ -65,7 +98,7 @@ export default class HomepageLayout extends Component {
                 <Menu.Item as='a'>Downloads</Menu.Item>
                 <Menu.Item as='a'>Docs</Menu.Item>
                 <Menu.Item position='right'>
-                <Button primary  size='huge'>
+                <Button primary size='huge' onClick={this.show}>
                   <Icon name='cloud download' />
                   Get Early Access
                 </Button>
@@ -90,7 +123,7 @@ export default class HomepageLayout extends Component {
             >
             What if you could spend more time co-creating amazing code and less time fighting your version control?
             </Header>
-            <Button primary  size='large'>
+            <Button primary  size='large'  onClick={this.show}>
             <Icon name='cloud download' />
             Get Early Access
           </Button>
