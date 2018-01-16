@@ -67,15 +67,14 @@ We’re really excited about what EngineOne can do for you!
         { visible ? 
           <Menu fixed='top' size='large' >
           <Container>
-          <Menu.Item as='a' active>EngineOne</Menu.Item>
-          <Menu.Item as='a'>Pricing</Menu.Item>
-          <Menu.Item as='a'>Downloads</Menu.Item>
-          <Menu.Item as='a'>Docs</Menu.Item>
-          <Menu.Item position='right'>
-          <Button primary  size='huge'  onClick={this.show}>
-            <Icon name='cloud download' />
-            Get Early Access
-          </Button>
+          <Menu.Item position='right' style={{padding:0}}>
+                <Menu.Item as='a'>Learn</Menu.Item>
+                <Menu.Item as='a'>Community</Menu.Item>
+                <Menu.Item as='a'>Blog</Menu.Item>
+              <Button primary  size='large'  onClick={this.show}>
+                <Icon name='cloud download' />
+                Get Early Access
+              </Button>
           </Menu.Item>
           </Container>
         </Menu>
@@ -88,16 +87,18 @@ We’re really excited about what EngineOne can do for you!
         >
           <Segment
             textAlign='center'
-            style={{ minHeight: '100vh', padding: '1em 0em', background:'url(newbg.png) no-repeat center bottom', backgroundSize:'cover' }}
+            style={{ minHeight: '100vh', padding: '1em 0em'}}
             vertical
           >
             <Container>
-              <Menu borderless secondary size='large'>
-                <Menu.Item as='a' active>EngineOne</Menu.Item>
-                <Menu.Item as='a'>Pricing</Menu.Item>
-                <Menu.Item as='a'>Downloads</Menu.Item>
-                <Menu.Item as='a'>Docs</Menu.Item>
+              <Menu borderless secondary pointing size='large'>
+                <div ><img src="logo.svg" style={{width:'200px', paddingTop:'12px'}}/></div>
+                
                 <Menu.Item position='right'>
+                <Menu.Item as='a' active>Home</Menu.Item>
+                <Menu.Item as='a'>Learn</Menu.Item>
+                <Menu.Item as='a'>Community</Menu.Item>
+                <Menu.Item as='a'>Blog</Menu.Item>
                 <Button primary size='huge' onClick={this.show}>
                   <Icon name='cloud download' />
                   Get Early Access
@@ -107,7 +108,7 @@ We’re really excited about what EngineOne can do for you!
             </Container>
 
             <Container>
-            <Grid style={{height:'90vh'}} verticalAlign='middle'>
+            <Grid style={{height:'90vh'}} verticalAlign='middle' stackable>
             <Grid.Row>
               <Grid.Column width={8}>
 
@@ -123,16 +124,12 @@ We’re really excited about what EngineOne can do for you!
             >
             What if you could spend more time co-creating amazing code and less time fighting your version control?
             </Header>
-            <Button primary  size='large'  onClick={this.show}>
-            <Icon name='cloud download' />
-            Get Early Access
-          </Button>
 
               </Grid.Column>
               <Grid.Column width={8}>
                 <Image
                   style={{width:'100%'}}
-                  src='https://www-assets3.herokucdn.com/assets/home/hero/startup-10d700b2164d8d9ceb3934c15f01277c7a4bb2ce9d9c1d14d0bd00d680debafc.png'
+                  src='team.png'
                 />
               </Grid.Column>
             </Grid.Row> 
@@ -144,13 +141,19 @@ We’re really excited about what EngineOne can do for you!
         </Visibility>
 
         <Segment  className="gradient" style={{ padding: '0em' }} vertical>
-        <Grid celled='internally' columns='equal' stackable>
-          <Grid.Row textAlign='center'>
-            <Grid.Column >
-              vcs logos ...  
+        <Grid padded  verticalAlign='middle'>
+          <Grid.Row>
+            <Grid.Column  width={6} textAlign='right'>
+              <img src="vcs.png" width="300" />  
             </Grid.Column>
-            <Grid.Column >
-              vcs logos ...  
+            <Grid.Column  width={6} textAlign='right'>
+              <Header inverted as='h4'>Automated real-time version control with EngineOne!</Header>
+            </Grid.Column>
+            <Grid.Column  width={4} textAlign='left'>
+              <Button primary inverted size='large'  onClick={this.show}>
+                <Icon name='cloud download' />
+                 Early Access
+              </Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>
