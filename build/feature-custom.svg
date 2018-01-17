@@ -1,0 +1,27 @@
+
+<svg width="51px" height="53px" viewBox="0 0 51 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="98.775506%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#129EE6" offset="0%"></stop>
+            <stop stop-color="#3366CC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-162.000000, -3486.000000)">
+            <rect id="Rectangle-Copy-5" fill="url(#linearGradient-1)" x="162" y="3486" width="51" height="53" rx="8"></rect>
+            <g id="settings.svg" transform="translate(174.000000, 3499.000000)">
+                <ellipse id="Oval" stroke="#F5F8FA" cx="8.11588235" cy="4.2" rx="3.35117647" ry="3.54117647"></ellipse>
+                <ellipse id="Oval" stroke="#F5F8FA" cx="8.11588235" cy="23.9647059" rx="3.35117647" ry="3.54117647"></ellipse>
+                <ellipse id="Oval" stroke="#F5F8FA" cx="19.2970588" cy="14.0823529" rx="3.41470588" ry="3.54117647"></ellipse>
+                <rect id="Rectangle-path" fill="#F5F8FA" fill-rule="nonzero" x="0" y="3.29411765" width="4.76470588" height="1.64705882"></rect>
+                <rect id="Rectangle-path" fill="#F5F8FA" fill-rule="nonzero" x="14.2941176" y="3.29411765" width="12.7058824" height="1.64705882"></rect>
+                <rect id="Rectangle-path" fill="#F5F8FA" fill-rule="nonzero" x="0" y="13.1764706" width="12.7058824" height="1.64705882"></rect>
+                <rect id="Rectangle-path" fill="#F5F8FA" fill-rule="nonzero" x="22.2352941" y="13.1764706" width="4.76470588" height="1.64705882"></rect>
+                <rect id="Rectangle-path" fill="#F5F8FA" fill-rule="nonzero" x="0" y="23.0588235" width="4.76470588" height="1.64705882"></rect>
+                <rect id="Rectangle-path" fill="#F5F8FA" fill-rule="nonzero" x="14.2941176" y="23.0588235" width="12.7058824" height="1.64705882"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

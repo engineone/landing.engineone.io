@@ -1,0 +1,45 @@
+
+<svg width="381px" height="211px" viewBox="0 0 381 211" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-868.000000, -954.000000)">
+            <g id="Laptop-" transform="translate(958.000000, 981.000000)" stroke="#129EE6">
+                <path d="M16.4913793,135.694737 L226.844828,135.694737 L226.844828,8.41052632 C226.844828,4.54453307 223.710821,1.41052632 219.844828,1.41052632 L23.4913793,1.41052632 C19.6253861,1.41052632 16.4913793,4.54453307 16.4913793,8.41052632 L16.4913793,135.694737 Z" id="Rectangle-4" stroke-width="2"></path>
+                <rect id="Rectangle-5" stroke-width="2" x="25.4798851" y="17.1789474" width="191.252874" height="107.252632"></rect>
+                <ellipse id="Oval" cx="127.847701" cy="9.42105263" rx="2.24712644" ry="2.25263158"></ellipse>
+                <path d="M15.9238021,135.442106 C7.26230142,144.669234 2.63891173,150.779533 2.17182374,153.448391 C1.7090058,156.092851 1.71360761,159.094092 2.19095341,162.451924 L242.399806,162.925204 C243.740673,159.645432 243.701126,156.69442 242.310769,153.999583 C240.763156,150.999948 235.772908,144.780264 227.398644,135.442107 L15.9237834,135.442105 Z" id="Rectangle-6" stroke-width="2"></path>
+                <path d="M12.6824713,153.026316 L231.78018,153.026316" id="Line-2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M204.811782,87.7 L218.03455,87.7" id="Line-3" stroke-width="2" stroke-linecap="square"></path>
+            </g>
+            <path d="M923.600345,1087.00703 C926.913978,1083.70728 926.913978,1081.16353 923.600345,1079.3758 C918.629894,1076.6942 902.450039,1079.76287 896.966191,1077.23316 C891.482342,1074.70345 893.404583,1069.24996 900.457576,1068.7 C905.159571,1068.33336 929.130271,1068.33336 972.369676,1068.7" id="Line-3" stroke="#627EE2" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M1185.28305,1046.17368 L1217.88575,1046.17368" id="Line-3" stroke="#627EE2" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M1175.73056,1068.7 L1247.64266,1068.7" id="Line-3" stroke="#627EE2" stroke-width="2" stroke-linecap="square"></path>
+            <text id="HTML" font-family="Roboto-Bold, Roboto" font-size="14" font-weight="bold" fill="#627EE2">
+                <tspan x="1197.08046" y="1096.90526">HTML</tspan>
+            </text>
+            <text id="CSS" font-family="Roboto-Bold, Roboto" font-size="14" font-weight="bold" fill="#627EE2">
+                <tspan x="928.845086" y="1003.42105">CSS</tspan>
+            </text>
+            <text id="PHP" font-family="Roboto-Bold, Roboto" font-size="14" font-weight="bold" fill="#627EE2">
+                <tspan x="995.469328" y="964">PHP</tspan>
+            </text>
+            <text id="JAVA" font-family="Roboto-Bold, Roboto" font-size="14" font-weight="bold" fill="#627EE2">
+                <tspan x="1204.48684" y="997.789474">JAVA</tspan>
+            </text>
+            <text id="PYTHON" font-family="Roboto-Bold, Roboto" font-size="14" font-weight="bold" fill="#627EE2">
+                <tspan x="1101.71452" y="966.252632">PYTHON</tspan>
+            </text>
+            <rect id="Rectangle-7" stroke="#129EE6" stroke-width="2" x="894.718391" y="1088.28421" width="57.5488506" height="75.7157895" rx="6"></rect>
+            <path d="M894.280172,1104.74211 C877.747115,1104.01469 869.645171,1111.23162 869.97434,1126.39289 C870.303509,1141.55415 878.402527,1148.32525 894.271395,1146.70617" id="Line-4" stroke="#03366C" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M894.291145,1111.81018 C881.87343,1111.44794 875.887677,1116.36384 876.333883,1126.55787 C876.78009,1136.75191 882.810465,1141.02913 894.425007,1139.38951" id="Line-4" stroke="#03366C" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M944.840517,1101.36316 C944.812721,1131.64463 944.727868,1148.88181 944.58596,1153.07469 C944.444052,1157.26758 941.907256,1159.17777 936.975575,1158.80526" id="Line-5" stroke="#03366C" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M1002,1017 L1093.00549,1017" id="Line-10-Copy-2" stroke="#129EE6" stroke-width="6" stroke-linecap="round"></path>
+            <path d="M1000,1068 L1091.00549,1068" id="Line-10-Copy-5" stroke="#129EE6" stroke-width="6" stroke-linecap="round"></path>
+            <path d="M1002,1033 L1074.68025,1033" id="Line-10-Copy-3" stroke="#129EE6" stroke-width="6" stroke-linecap="round"></path>
+            <path d="M1002,1053 L1045.01163,1053" id="Line-10-Copy-4" stroke="#129EE6" stroke-width="6" stroke-linecap="round"></path>
+            <path d="M1072,1084 L1115.01163,1084" id="Line-10-Copy-6" stroke="#129EE6" stroke-width="6" stroke-linecap="round"></path>
+        </g>
+    </g>
+</svg>

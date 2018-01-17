@@ -1,0 +1,19 @@
+
+<svg width="51px" height="53px" viewBox="0 0 51 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="98.775506%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#129EE6" offset="0%"></stop>
+            <stop stop-color="#3366CC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-162.000000, -3197.000000)">
+            <rect id="Rectangle" fill="url(#linearGradient-1)" x="162" y="3197" width="51" height="53" rx="8"></rect>
+            <g id="bolt.svg" transform="translate(175.000000, 3209.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <path d="M2.8014,31 L7.6153,17.9473684 L0,17.9473684 L20.0123,0 L15.0052,13.0526316 L22.5722,13.0526316 L2.8014,31 Z M9.9498,16.3157895 L6.601,25.11 L18.4667,14.6842105 L12.6546,14.6842105 L16.0839,5.98789474 L4.2021,16.3157895 L9.9498,16.3157895 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

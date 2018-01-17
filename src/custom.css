@@ -1,6 +1,25 @@
 .gradient {
     background: linear-gradient(-270deg, #67B0E4 0%, #4A90E2 100%) !important;
 }
+.benifits.ui.vertical.segment, .features.ui.vertical.segment {
+    background-color: #F5F8FA;
+}
+.benifits .ui.header {
+    margin-top:0;
+    margin-bottom: 1.2rem;
+}
+.benifits .icon {
+    float: left;
+    padding-right: 10px;
+}
+.benifits .ui.grid>.row {
+    padding-bottom: 7rem;
+}
+
+.footer.ui.vertical.segment {
+    background-color: #EBF1F5;
+}
+
 
 .ui.secondary.pointing.menu {
     border-bottom: none !important;

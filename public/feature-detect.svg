@@ -1,0 +1,21 @@
+
+<svg width="51px" height="53px" viewBox="0 0 51 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="98.775506%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#129EE6" offset="0%"></stop>
+            <stop stop-color="#3366CC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-592.000000, -3217.000000)">
+            <rect id="Rectangle-Copy" fill="url(#linearGradient-1)" x="592" y="3217" width="51" height="53" rx="8"></rect>
+            <g id="upload.svg" transform="translate(606.000000, 3235.000000)">
+                <polyline id="Shape" stroke="#F5F8FA" stroke-width="2" points="3.23076923 8 10.5 0.8 17.7692308 8"></polyline>
+                <rect id="Rectangle-path" fill="#F5F8FA" fill-rule="nonzero" x="0" y="22.4" width="21" height="1.6"></rect>
+                <path d="M10.5,19.2 L10.5,1.6" id="Shape" stroke="#F5F8FA" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>
