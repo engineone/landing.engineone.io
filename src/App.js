@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import Connector from './Connector'
 import {
   Button,
   Container,
@@ -16,7 +18,28 @@ import {
 } from 'semantic-ui-react'
 
 export default class HomepageLayout extends Component {
-  state = { open: false }
+  state = { open: false,
+    pic1:{
+      bottom:0,
+      height:0,
+      left:0,
+      right:0,
+      top:0,
+      width:0,
+      x:0,
+      y:0
+    },
+    pic2:{
+      bottom:0,
+      height:0,
+      left:0,
+      right:0,
+      top:0,
+      width:0,
+      x:0,
+      y:0
+    }
+  }
   
   show = () => this.setState({ open: true })
   close = () => this.setState({ open: false })
@@ -24,8 +47,25 @@ export default class HomepageLayout extends Component {
   hideFixedMenu = () => this.setState({ visible: false })
   showFixedMenu = () => this.setState({ visible: true })
 
+  componentDidMount() {
+    
+        //Get initial width. Obviously, this will trigger a render,
+        //but nothing will change, look wise.
+        //But, if this is against personal taste then store this property 
+        //in a different way
+        //But it'll complicate your determineWidth logic a bit.        
+        console.log(this.refs)
+        this.setState({
+          pic1: ReactDOM.findDOMNode(this.refs.pic1).getBoundingClientRect(),
+          pic2: ReactDOM.findDOMNode(this.refs.pic2).getBoundingClientRect()
+        });
+      }
+
   render() {
-    const { visible, open } = this.state
+    const { visible, open, pic1, pic2 } = this.state;
+
+    // get bounding boxes
+    console.log(pic1);
 
     return (
       <div>
@@ -67,6 +107,7 @@ We’re really excited about what EngineOne can do for you!
         { visible ? 
           <Menu fixed='top' size='large' >
           <Container>
+          <div ><img src="logo.svg" style={{width:'125px', paddingTop:'12px'}}/></div>
           <Menu.Item position='right' style={{padding:0}}>
                 <Menu.Item as='a'>Learn</Menu.Item>
                 <Menu.Item as='a'>Community</Menu.Item>
@@ -174,19 +215,26 @@ We’re really excited about what EngineOne can do for you!
               <Grid.Column width={2}>
               </Grid.Column>
               <Grid.Column width={6}>
+                <Connector from={pic1} to={pic2}></Connector>
+                
+                <div ref='pic1' style={{position:'relative'}} >
                 <Image
                   style={{width:'100%'}}
                   src='ide-pic.svg'
-                />
+                  
+                /></div>
               </Grid.Column>
             </Grid.Row>
 
+            
             <Grid.Row>
               <Grid.Column width={6}>
+                <div ref='pic2' >
                 <Image
                   style={{width:'100%'}}
                   src='safe-pic.svg'
                 />
+                </div>
                 </Grid.Column>
               <Grid.Column width={2}>
               </Grid.Column>
