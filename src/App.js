@@ -18,28 +18,7 @@ import {
 } from 'semantic-ui-react'
 
 export default class HomepageLayout extends Component {
-  state = { open: false,
-    pic1:{
-      bottom:0,
-      height:0,
-      left:0,
-      right:0,
-      top:0,
-      width:0,
-      x:0,
-      y:0
-    },
-    pic2:{
-      bottom:0,
-      height:0,
-      left:0,
-      right:0,
-      top:0,
-      width:0,
-      x:0,
-      y:0
-    }
-  }
+  state = { open: false  }
   
   show = () => this.setState({ open: true })
   close = () => this.setState({ open: false })
@@ -47,28 +26,13 @@ export default class HomepageLayout extends Component {
   hideFixedMenu = () => this.setState({ visible: false })
   showFixedMenu = () => this.setState({ visible: true })
 
-  componentDidMount() {
-    
-        //Get initial width. Obviously, this will trigger a render,
-        //but nothing will change, look wise.
-        //But, if this is against personal taste then store this property 
-        //in a different way
-        //But it'll complicate your determineWidth logic a bit.        
-        console.log(this.refs)
-        this.setState({
-          pic1: ReactDOM.findDOMNode(this.refs.pic1).getBoundingClientRect(),
-          pic2: ReactDOM.findDOMNode(this.refs.pic2).getBoundingClientRect()
-        });
-      }
 
   render() {
-    const { visible, open, pic1, pic2 } = this.state;
-
-    // get bounding boxes
-    console.log(pic1);
+    const { visible, open } = this.state;
 
     return (
       <div>
+        
 
 <Modal size="small" open={open} onClose={this.close} closeIcon>
     <Header icon='mail outline' content='Sign Up for Early Access' />
@@ -105,15 +69,14 @@ We’re really excited about what EngineOne can do for you!
   </Modal>
 
         { visible ? 
-          <Menu fixed='top' size='large' >
+          <Menu borderless fixed='top' size='large' >
           <Container>
-          <div ><img src="logo.svg" style={{width:'125px', paddingTop:'12px'}}/></div>
-          <Menu.Item position='right' style={{padding:0}}>
+          <div ><img src="logo.svg" style={{width:'125px', paddingTop:'15px'}}/></div>
+          <Menu.Item position='right' style={{padding:'3px'}}>
                 <Menu.Item as='a'>Learn</Menu.Item>
                 <Menu.Item as='a'>Community</Menu.Item>
                 <Menu.Item as='a'>Blog</Menu.Item>
               <Button primary  size='large'  onClick={this.show}>
-                <Icon name='cloud download' />
                 Get Early Access
               </Button>
           </Menu.Item>
@@ -126,22 +89,27 @@ We’re really excited about what EngineOne can do for you!
           onBottomVisible={this.hideFixedMenu}
           once={false}
         >
+          
           <Segment
+            className="home"
             textAlign='center'
             style={{ minHeight: '100vh', padding: '1em 0em'}}
             vertical
+            
           >
+          <img src="/bg.svg" style={{position:"absolute", width:'100%', height:'80%', top:0,right:0,left:0,bottom:0}} />
+          
+            
             <Container>
-              <Menu borderless secondary pointing size='large'>
-                <div ><img src="logo.svg" style={{width:'200px', paddingTop:'12px'}}/></div>
+              <Menu inverted borderless secondary pointing size='large'>
+                <div ><img src="logo-bw.svg" style={{position:'absolute', width:'200px', paddingTop:'12px'}}/></div>
                 
                 <Menu.Item position='right'>
                 <Menu.Item as='a' active>Home</Menu.Item>
                 <Menu.Item as='a'>Learn</Menu.Item>
                 <Menu.Item as='a'>Community</Menu.Item>
                 <Menu.Item as='a'>Blog</Menu.Item>
-                <Button primary size='huge' onClick={this.show}>
-                  <Icon name='cloud download' />
+                <Button inverted size='huge' onClick={this.show}>
                   Get Early Access
                 </Button>
                 </Menu.Item>
@@ -149,28 +117,30 @@ We’re really excited about what EngineOne can do for you!
             </Container>
 
             <Container>
-            <Grid style={{height:'90vh'}} verticalAlign='middle' stackable>
+              <Grid verticalAlign='middle' style={{ minHeight: '80vh'}} >
             <Grid.Row>
-              <Grid.Column width={6}>
+              <Grid.Column width={8}>
 
               <Header
+              inverted
               as='h1'
               style={{ textAlign:'left', fontSize: '2em' }}
             >
-            Syncing Code and People
+            Spend more time writing code, and less time managing it!
             </Header>
             <Header
+              inverted
               as='h2'
               style={{ textAlign:'left', fontSize: '1em', fontWeight: 'normal' }}
             >
-            What if you could spend more time co-creating amazing code and less time fighting your version control?
+            EngineOne is a blockchain-based code syncing service that helps Developers spend more time coding and less time managing code by automating their version control workflow.
             </Header>
 
               </Grid.Column>
-              <Grid.Column width={10}>
+              <Grid.Column width={8}>
                 <Image
-                  style={{width:'100%'}}
-                  src='team.svg'
+                  style={{width:'90%'}}
+                  src='man.svg'
                 />
               </Grid.Column>
             </Grid.Row> 
@@ -181,106 +151,119 @@ We’re really excited about what EngineOne can do for you!
           </Segment>
         </Visibility>
 
-        <Segment  className="gradient" style={{ padding: '0em' }} vertical>
-        <Grid padded  verticalAlign='middle'>
+        <Segment inverted className="gradient" style={{ padding: '0em' }} vertical>
+        <Grid padded  verticalAlign='top'>
           <Grid.Row>
-            <Grid.Column  width={6} textAlign='right'>
-              <img src="vcs.png" width="300" />  
+            <Grid.Column  width={2} textAlign='right'>
+              <img src="ide.svg"  />  
             </Grid.Column>
-            <Grid.Column  width={6} textAlign='right'>
-              <Header inverted as='h4'>Automated real-time version control with EngineOne!</Header>
+            <Grid.Column  width={6} textAlign='left'>
+              <Header inverted as='h4'>You might be overworking yourself!</Header>
+              <p>
+              Your job as a developer is building great software, yet you find yourself investing a lot of time on code management. You are constantly running commands to make your code accessible to others, and resolving conflicts because someone didn’t update their code regularly. Also, you have to remember to never pull before comitting. Who made those rules?
+              </p>
             </Grid.Column>
-            <Grid.Column  width={4} textAlign='left'>
-              <Button primary inverted size='large'  onClick={this.show}>
-                <Icon name='cloud download' />
-                 Early Access
-              </Button>
+            <Grid.Column  width={6} textAlign='left'>
+            <Header inverted as='h4'>Your code might be at risk!</Header>
+            <p>
+            Either due to unexpected conflicts or hardware failure, you can loose your code any day unless everyone you collaborate with makes regular backups and doesn’t go for 3 days without commiting. But why is this your responsibility? Your job is tough enough already! 
+            </p>
+          </Grid.Column>
+          <Grid.Column  width={2} textAlign='left'>
+              <img src="safe.svg"  />  
             </Grid.Column>
           </Grid.Row>
         </Grid>
       </Segment>
 
         <Segment className="benifits" style={{ padding: '8em 0em' }} vertical>
-          <Grid container stackable verticalAlign='middle'>
+          <Grid container stackable verticalAlign='middle'>            
             <Grid.Row>
-              <Grid.Column width={8}>
-                <img src="ide.svg" className="icon"/>
-                <Header as='h3'>
-                Real-time Collaboration that lets you keep your favourite IDE</Header>
-                <p>
-                Most attempts at real-time collaboration require you use <i>their</i> IDE some online code editor. 
-                EngineOne works with your existing IDE whether its TextPad or VS Code.
-                </p>
-                </Grid.Column>
-              <Grid.Column width={2}>
-              </Grid.Column>
-              <Grid.Column width={6}>
-                <Connector from={pic1} to={pic2}></Connector>
-                
-                <div ref='pic1' style={{position:'relative'}} >
-                <Image
-                  style={{width:'100%'}}
-                  src='ide-pic.svg'
-                  
-                /></div>
-              </Grid.Column>
-            </Grid.Row>
-
-            
-            <Grid.Row>
-              <Grid.Column width={6}>
-                <div ref='pic2' >
+              <Grid.Column width={3}>
                 <Image
                   style={{width:'100%'}}
                   src='safe-pic.svg'
                 />
-                </div>
                 </Grid.Column>
-              <Grid.Column width={2}>
+              <Grid.Column width={1}>
               </Grid.Column>
-              <Grid.Column width={8}>
-                <img src="safe.svg" className="icon"/>
-                <Header as='h3'>Your code is SAFE</Header>
+              <Grid.Column width={10}>
+                <Header as='h3'>You just start coding!</Header>
                 <p>
-                As you work, EngineOne automatically syncs your changes securely to the cloud. 
-                Whether your machine crashes or you delete code, you can always roll back to 
-                previous versions without having to manually commit. Think of it as auto-commit with super powers!
+                You no longer need to keep an open teminal to run version control commands, or install fancy IDE plugins to help with version control. EngineOne version controls your code automatically so you never have to deal with dirty branches and manually checking files into version control.
                 </p>
               </Grid.Column>
             </Grid.Row>
 
             <Grid.Row>
-              <Grid.Column width={8}>
-                <img src="proactive.svg" className="icon"/>
-                <Header as='h3'>Advanced Warning System</Header>
-                <p>
-                Get notifications when colleagues are working on code that might break yours. 
-                Be proactive and avoid conflicts before they happen.
-                </p>
-                </Grid.Column>
               <Grid.Column width={2}>
               </Grid.Column>
-              <Grid.Column width={6}>
+              <Grid.Column width={10} textAlign="right">
+                <Header as='h3'>Code is backed up automatically…</Header>
+                <p>
+                EngineOne picks up all the changes you are making to your code and syncs them up to a secure cloud infrastructure. This ensures that you always have a safe copy of your code guarded by us and available to you whenever you need a clean copy.
+                </p>
+              </Grid.Column>
+              <Grid.Column width={1}>
+              </Grid.Column>
+              <Grid.Column width={3}>
                 <Image
                   style={{width:'100%'}}
-                  src='proactive-pic.svg'
+                  src='ide-pic.svg'
                 />
-              </Grid.Column>
+                </Grid.Column>
             </Grid.Row>
 
             <Grid.Row>
-              <Grid.Column width={8}>
+              <Grid.Column width={3}>
                 <Image
                   style={{width:'100%'}}
                   src='community-pic.svg'
                 />
                 </Grid.Column>
-              <Grid.Column width={8}>
-                <img src="community.svg" className="icon"/>
-                <Header as='h3'>Community Focussed</Header>
+              <Grid.Column width={1}>
+              </Grid.Column>
+              <Grid.Column width={10}>
+                <Header as='h3'>Everyone’s code is always up to date</Header>
                 <p>
-                With EngineOne you are never left in the dark. We are community focussed, and always open to talk. 
-                In fact you can chat to us right now!
+                There is no need to wait for someone to commit and push their code! EngineOne keeps code copies eventually identical wherever the collaborators may be. This way if someone in the team needs you to check their code, you don’t need to clean up your working copy first. You just switch to their view of the code.
+                </p>
+              </Grid.Column>
+            </Grid.Row>
+
+            
+            <Grid.Row>
+            <Grid.Column width={2}>
+            </Grid.Column>
+            <Grid.Column width={10} textAlign="right">
+              <Header as='h3'>Conflicts are detected before they occur</Header>
+              <p>
+              Because EngineOne syncs the code near real-time, it can detect when developers are in a collision course. This helps prevent conflicts and helps collaborators know when they are potentially working on the same feature.
+              </p>
+            </Grid.Column>
+            <Grid.Column width={1}>
+            </Grid.Column>
+            <Grid.Column width={3}>
+              <Image
+                style={{width:'100%'}}
+                src='proactive-pic.svg'
+              />
+              </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row>
+              <Grid.Column width={3}>
+                <Image
+                  style={{width:'100%'}}
+                  src='block-pic.svg'
+                />
+                </Grid.Column>
+              <Grid.Column width={1}>
+              </Grid.Column>
+              <Grid.Column width={10}>
+                <Header as='h3'>Collaborate without internet access with blockchain!</Header>
+                <p>
+                EngineOne is designed to be offline first. And it takes that a step further by enabling a team of collaborators to continue syncing code with one another as long as they are connected to the same network. So get stuff done with or without internet connectivity.
                 </p>
               </Grid.Column>
             </Grid.Row>
@@ -299,8 +282,8 @@ We’re really excited about what EngineOne can do for you!
           </Grid>
         </Segment> */}
 
-        <Segment style={{ padding: '8em 0em' }} vertical>
-          <Grid container stackable verticalAlign='middle'>
+        <Segment inverted className="how" style={{ padding: '8em 0em' }} vertical>
+          <Grid  container stackable verticalAlign='middle'>
             <Grid.Row>
               <Grid.Column width={8}>
                 <Image
@@ -309,7 +292,7 @@ We’re really excited about what EngineOne can do for you!
                 />
                 </Grid.Column>
               <Grid.Column width={8}>
-                <Header as='h3'>How it Works</Header>
+                <Header inverted as='h3'>How it Works</Header>
                 <p>
                 EngineOne is a code syncing service that helps Software Developers spend 
                 more time coding and less time managing code by automating their version 
@@ -334,16 +317,14 @@ We’re really excited about what EngineOne can do for you!
               <img src="feature-offline.svg" />
               <Header as='h4'>Offline First</Header>
               <p>
-              Your code change history is stored even if you are working offline. 
-              And if you are working in a localised team, EngineOne's Self-Organising-Network 
-              allows teams to seamlessly collaborate online and offline.
+              Your code change history is stored even if you are working offline. And if you are working in a localised team, EngineOne's Self-Organising-Network allows teams to seamlessly collaborate online and offline.
               </p>
             </Grid.Column>
             <Grid.Column >
             <img src="feature-detect.svg" />
               <Header as='h4'>Early Conflict Detection</Header>
               <p>
-              Unlike other solutions, EngineOne alerts you of potential issues before they become big problems.
+              Unlike other solutions, EngineOne alerts you of potential code conflicts before they become big problems.
               </p>
             </Grid.Column>
               <Grid.Column >
