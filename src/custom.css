@@ -40,7 +40,6 @@
 }
 .ui.button {
     border-radius: 2rem !important;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50) !important;
 
     color: #FFFFFF;
     background: #4A90E2;
@@ -52,4 +51,21 @@
 }
 .ui.primary.button, .ui.primary.buttons .button {
     background-color: #129EE6; 
+}
+
+.langbuttons {
+    border-radius: 2rem;
+    overflow: hidden;
+    border: 2px solid #129EE6; 
+}
+.langbuttons .ui.button {
+    border-radius: 0 !important;
+}
+
+.lang {display: none}
+.eng .lang.eng {
+    display: inline-block;
+}
+.geek .lang.geek {
+    display: inline-block;
 }
