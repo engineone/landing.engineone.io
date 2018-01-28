@@ -111,7 +111,7 @@ We’re really excited about what EngineOne can do for you!
             vertical
             
           >
-          <img src="/bg.svg" style={{position:"absolute", width:'100%', height:'85%', top:0,right:0,left:0,bottom:0}} />
+          <img src="/bg.svg" style={{position:"absolute", width:'100%', height:'75%', top:0,right:0,left:0,bottom:0}} />
           
             
             <Container>
@@ -166,7 +166,7 @@ We’re really excited about what EngineOne can do for you!
             </Grid.Row> 
 
             <Grid.Row>
-              <Grid.Column textAlign="center">
+              <Grid.Column textAlign="center" style={{padding:'20px'}}>
 
             <Button.Group className='langbuttons'>
               <Button inverted={lang!='geek'} primary={lang=='geek'} onClick={()=>this.setLang("geek")}>Developer</Button>
