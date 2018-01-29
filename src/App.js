@@ -78,13 +78,7 @@ We’re really excited about what EngineOne can do for you!
           <div >
             <img src="logo.svg" style={{width:'170px', paddingTop:'11px'}}/>
           </div>
-          <Menu.Item position='left' style={{padding:'0 20px'}}>
-          <Button.Group className='langbuttons' size='mini'>
-              <Button inverted={lang!='geek'} primary={lang=='geek'} onClick={()=>this.setLang("geek")}>Developer</Button>
-              {/* <Button.Or text="<>"/> */}
-              <Button  inverted={lang!='eng'} primary={lang=='eng'} onClick={()=>this.setLang("eng")}>Business</Button>
-            </Button.Group>
-          </Menu.Item>
+          
           <Menu.Item position='right' style={{padding:'3px'}}>
           <Menu.Item as='a'>&nbsp;</Menu.Item>
                 {/* <Menu.Item as='a'>Learn</Menu.Item>
@@ -95,6 +89,12 @@ We’re really excited about what EngineOne can do for you!
               </Button>
           </Menu.Item>
           </Container>
+{/* 
+          <Button.Group className='langbuttons' size='mini'>
+              <Button inverted={lang!='geek'} primary={lang=='geek'} onClick={()=>this.setLang("geek")}>Developer</Button>
+              <Button  inverted={lang!='eng'} primary={lang=='eng'} onClick={()=>this.setLang("eng")}>Business</Button>
+            </Button.Group> */}
+
         </Menu>
           : null }
 
@@ -108,7 +108,7 @@ We’re really excited about what EngineOne can do for you!
           <Segment
             className="home"
             textAlign='center'
-            style={{  paddingTop: '1em', paddingBottom: '3em'}}
+            style={{  paddingTop: '1em', paddingBottom: 0}}
             vertical
           >
           <img src="/bg.svg" style={{position:"absolute", width:'100%', height:'75%', top:0,right:0,left:0,bottom:0}} />
@@ -167,7 +167,7 @@ We’re really excited about what EngineOne can do for you!
 
             <Grid.Row  style={{padding:0}}>
               <Grid.Column width={8}></Grid.Column>
-              <Grid.Column width={4} style={{padding:'2px'}}>
+              <Grid.Column width={4} style={{padding:'0',marginLeft:'-5px'}}>
                 <Connector right x={0} y={0} width={100} height={50} />
               </Grid.Column>
             </Grid.Row>
@@ -176,9 +176,9 @@ We’re really excited about what EngineOne can do for you!
               <Grid.Column textAlign="center" style={{padding:0, paddingBottom:'20px'}}>
 
             <Button.Group className='langbuttons'>
-              <Button inverted={lang!='geek'} primary={lang=='geek'} onClick={()=>this.setLang("geek")}>Developer</Button>
+              <Button style={{width:'100px'}} inverted={lang!='geek'} primary={lang=='geek'} onClick={()=>this.setLang("geek")}>Developer</Button>
               {/* <Button.Or text="<>"/> */}
-              <Button  inverted={lang!='eng'} primary={lang=='eng'} onClick={()=>this.setLang("eng")}>Business</Button>
+              <Button style={{width:'100px'}} inverted={lang!='eng'} primary={lang=='eng'} onClick={()=>this.setLang("eng")}>Business</Button>
             </Button.Group>
 
               </Grid.Column>
@@ -188,18 +188,17 @@ We’re really excited about what EngineOne can do for you!
           </Grid>
           </Container>
             
-            
+            <img style={{position:'relative',left:'-2px', bottom:'-6px'}} src='line-top.svg' />
           </Segment>
         </Visibility>
 
-        <Segment inverted className="gradient" style={{ paddingBottom: '2em' }} >
+        <Segment inverted className="gradient" style={{ margin:0, padding: 0 }} >
         <Container>
-        <Grid padded  verticalAlign='top'>
+        <Grid padded celled='internally' verticalAlign='top'>
           <Grid.Row>
-            <Grid.Column  width={2} textAlign='right'>
-              <img src="ide.svg" />  
-            </Grid.Column>
-            <Grid.Column  width={6} textAlign='left'>
+            <Grid.Column  width={8} textAlign='left'>
+                <img src="ide.svg" style={{float:'left'}} /> 
+              <div style={{marginLeft:'70px',marginRight:'25px'}}>
               <Header inverted as='h4'>
               <span className="lang geek">
 You might be overworking yourself!
@@ -218,10 +217,11 @@ Your job as a developer is building great software, yet you find yourself invest
               </span>
               
               </p>
+              </div>
             </Grid.Column>
-            {/* <Grid.Column  width={2}>
-            </Grid.Column> */}
-            <Grid.Column  width={6} textAlign='right'>
+            <Grid.Column  width={8} textAlign='right'>
+            <img src="safe.svg" style={{float:'right'}} /> 
+              <div style={{marginRight:'70px',marginLeft:'25px'}}>
             <Header inverted as='h4'>
             <span className="lang geek">
 Your code might be at risk!
@@ -239,16 +239,14 @@ Either due to unexpected conflicts or hardware failure, you can loose your code 
               </span>
             
             </p>
+            </div>
           </Grid.Column>
-          <Grid.Column  width={2} textAlign='left'>
-              <img src="safe.svg"  />  
-            </Grid.Column>
           </Grid.Row>
         </Grid>
         </Container>
       </Segment>
 
-      <div style={{margin:'0 auto',textAlign:'center',position:'relative',top:'-70px',marginBottom:'-55px'}}>
+      <div style={{margin:'0 auto',textAlign:'center',position:'relative',left:'-4px',top:'-135px',marginBottom:'-110px'}}>
           <img src='seal.svg' />
           <Header as='h2' className='solution'>EngineOne is the solution!</Header>
       </div>
@@ -546,6 +544,18 @@ EngineOne works with your existing tools, rather than against them. It supports 
         </Menu>
       </Container>
         </Segment>
+
+
+        { visible ? 
+        <div className='floating' title='Language'>
+          <Button.Group className='langbuttons' size='mini'>
+          <Button inverted={lang!='geek'} primary={lang=='geek'} onClick={()=>this.setLang("geek")}>Developer</Button>
+          {/* <Button.Or text="<>"/> */}
+          <Button  inverted={lang!='eng'} primary={lang=='eng'} onClick={()=>this.setLang("eng")}>Business</Button>
+        </Button.Group>
+        </div>
+        :null}
+
       </div>
     )
   }

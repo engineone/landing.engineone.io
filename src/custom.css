@@ -69,6 +69,13 @@ body, .ui.header, p {
     background-color: #129EE6; 
 }
 
+.floating {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    border-radius: 2rem;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+}
 .langbuttons {
     border-radius: 2rem;
     overflow: hidden;
@@ -84,4 +91,11 @@ body, .ui.header, p {
 }
 .geek .lang.geek {
     display: inline-block;
+}
+
+
+/* white line in purple */
+.ui.celled.grid>.row>.column {
+    -webkit-box-shadow: -4px 0 0 0 #ffffff;
+    box-shadow: -4px 0 0 0 #ffffff;
 }

@@ -53,15 +53,15 @@ export default class Connector extends Component {
             width={pxwidth+"px"} height={pxheight+"px"} viewBox={"0 0 "+pxwidth+" "+pxheight} >
             {(this.props.right)?
                 <path d={`M${pxwidth-8},8 L18 8 q -10 0 -10 10 L 8 30`} 
-            fill="none" stroke="#4A90E2" strokeWidth="3"></path>
+            fill="none" stroke="#4A90E2" strokeWidth="4"></path>
             :
                 <path d={`M0,8 L${pxwidth-18} 8 q 10 0 10 10 L ${pxwidth-8} 30`}
-                fill="none" stroke="#4A90E2" strokeWidth="3"></path>
+                fill="none" stroke="#4A90E2" strokeWidth="4"></path>
             }
 
 
     <g id="Icosn-upadate" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-dasharray="7" stroke-linecap="square">
-        <path d={`M${(this.props.right)?8:pxwidth-8},30 L${(this.props.right)?8:pxwidth-8},${pxheight}`} id="Line-22" stroke="#4A90E2" strokeWidth="3"></path>
+        <path d={`M${(this.props.right)?8:pxwidth-8},30 L${(this.props.right)?8:pxwidth-8},${pxheight}`} id="Line-22" stroke="#4A90E2" strokeWidth="4"></path>
     </g>
 <circle id="Oval-6" cx={(this.props.right)?8:pxwidth-8} cy={pxheight-8} r="8" fill="#4A90E2"></circle>
               
