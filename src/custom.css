@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+body {
+    /* background-color: #F5F8FA; */
+}
+body, .ui.header, p {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.solution {
+    font-weight: 300 !important;
+    font-size: 2em !important;
+    margin-top: 5px !important;
+}
+
+.features.ui.vertical.segment {
+    background-color: #F5F8FA;
+}
+
+
 .home.ui.vertical.segment {
     /* background-image: linear-gradient(-179deg, #129EE6 0%, #3366CC 100%); */
     background-image: url("/connect.png") ;       
@@ -10,10 +29,7 @@
 
 .gradient {
     /* background:  linear-gradient(-90deg, #129EE6 0%, #3366CC 99%) !important; */
-    background: #6E68A4 !important;
-}
-.benifits.ui.vertical.segment, .features.ui.vertical.segment {
-    background-color: #F5F8FA;
+    background: #333399 !important;
 }
 .benifits .ui.header {
     margin-top:0;
@@ -24,7 +40,7 @@
     padding-right: 10px;
 }
 .benifits .ui.grid>.row {
-    padding-bottom: 7rem;
+     padding-bottom: 5rem; 
 }
 
 .footer.ui.vertical.segment {
@@ -56,7 +72,7 @@
 .langbuttons {
     border-radius: 2rem;
     overflow: hidden;
-    border: 2px solid #129EE6; 
+    border: 1px solid #129EE6; 
 }
 .langbuttons .ui.button {
     border-radius: 0 !important;

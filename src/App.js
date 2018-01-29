@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Connector from './Connector'
+import Corner from './Corner'
 import {
   Button,
   Container,
@@ -109,7 +110,6 @@ We’re really excited about what EngineOne can do for you!
             textAlign='center'
             style={{  paddingTop: '1em', paddingBottom: '3em'}}
             vertical
-            
           >
           <img src="/bg.svg" style={{position:"absolute", width:'100%', height:'75%', top:0,right:0,left:0,bottom:0}} />
           
@@ -165,8 +165,15 @@ We’re really excited about what EngineOne can do for you!
               </Grid.Column>
             </Grid.Row> 
 
-            <Grid.Row>
-              <Grid.Column textAlign="center" style={{padding:'20px'}}>
+            <Grid.Row  style={{padding:0}}>
+              <Grid.Column width={8}></Grid.Column>
+              <Grid.Column width={4} style={{padding:'2px'}}>
+                <Connector right x={0} y={0} width={100} height={50} />
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row style={{paddingTop:0}}>
+              <Grid.Column textAlign="center" style={{padding:0, paddingBottom:'20px'}}>
 
             <Button.Group className='langbuttons'>
               <Button inverted={lang!='geek'} primary={lang=='geek'} onClick={()=>this.setLang("geek")}>Developer</Button>
@@ -185,11 +192,12 @@ We’re really excited about what EngineOne can do for you!
           </Segment>
         </Visibility>
 
-        <Segment inverted className="gradient" style={{ padding: '0em' }} vertical>
+        <Segment inverted className="gradient" style={{ paddingBottom: '2em' }} >
+        <Container>
         <Grid padded  verticalAlign='top'>
           <Grid.Row>
             <Grid.Column  width={2} textAlign='right'>
-              <img src="ide.svg"  />  
+              <img src="ide.svg" />  
             </Grid.Column>
             <Grid.Column  width={6} textAlign='left'>
               <Header inverted as='h4'>
@@ -211,7 +219,9 @@ Your job as a developer is building great software, yet you find yourself invest
               
               </p>
             </Grid.Column>
-            <Grid.Column  width={6} textAlign='left'>
+            {/* <Grid.Column  width={2}>
+            </Grid.Column> */}
+            <Grid.Column  width={6} textAlign='right'>
             <Header inverted as='h4'>
             <span className="lang geek">
 Your code might be at risk!
@@ -235,10 +245,24 @@ Either due to unexpected conflicts or hardware failure, you can loose your code 
             </Grid.Column>
           </Grid.Row>
         </Grid>
+        </Container>
       </Segment>
 
-        <Segment className="benifits" style={{ padding: '8em 0em' }} vertical>
-          <Grid container stackable verticalAlign='middle'>            
+      <div style={{margin:'0 auto',textAlign:'center',position:'relative',top:'-70px',marginBottom:'-55px'}}>
+          <img src='seal.svg' />
+          <Header as='h2' className='solution'>EngineOne is the solution!</Header>
+      </div>
+
+        <Segment className="benifits" style={{ paddingBottom: '6em' }} vertical>
+          <Grid container  verticalAlign='middle'>    
+          
+          <Grid.Row  style={{padding:0}}>
+              <Grid.Column width={2}></Grid.Column>
+              <Grid.Column width={6} >
+                <Connector dots right x={0} y={0} width={100} height={50} />
+              </Grid.Column>
+            </Grid.Row>
+
             <Grid.Row>
               <Grid.Column width={3}>
                 <Image
@@ -246,10 +270,8 @@ Either due to unexpected conflicts or hardware failure, you can loose your code 
                   src='safe-pic.svg'
                 />
                 </Grid.Column>
-              <Grid.Column width={1}>
-              </Grid.Column>
-              <Grid.Column width={10}>
-                <Header as='h3'><span className="lang geek">
+              <Grid.Column width={8}>
+                <Header as='h3' style={{color:'#7A5DAF'}}><span className="lang geek">
 You just start coding!
               </span>
               <span className="lang eng">
@@ -264,13 +286,17 @@ You just start coding!
               </span>
                 </p>
               </Grid.Column>
+              <Grid.Column width={5} >
+                <Corner  x={0} y={0} width={68} height={80} />
+              </Grid.Column>
             </Grid.Row>
 
             <Grid.Row>
-              <Grid.Column width={2}>
+              <Grid.Column width={5} textAlign='right'>
+                <Corner right x={0} y={0} width={68} height={80} />
               </Grid.Column>
-              <Grid.Column width={10} textAlign="right">
-                <Header as='h3'><span className="lang geek">
+              <Grid.Column width={8} textAlign="right">
+                <Header as='h3'  style={{color:'#14B18E'}}><span className="lang geek">
 Code is backed up automatically…
               </span>
               <span className="lang eng">
@@ -284,8 +310,6 @@ EngineOne picks up all the changes you are making to your code and syncs them up
               EngineOne picks up all the changes your team is making and uploads them automatically to a secure public or private cloud. This ensures that you always have a safe copy of your code and that is accessible to you whenever you need a clean copy.
               </span>
                 </p>
-              </Grid.Column>
-              <Grid.Column width={1}>
               </Grid.Column>
               <Grid.Column width={3}>
                 <Image
@@ -302,10 +326,8 @@ EngineOne picks up all the changes you are making to your code and syncs them up
                   src='community-pic.svg'
                 />
                 </Grid.Column>
-              <Grid.Column width={1}>
-              </Grid.Column>
-              <Grid.Column width={10}>
-                <Header as='h3'>
+              <Grid.Column width={8}>
+                <Header as='h3' style={{color:'#4A90E2'}}>
                 <span className="lang geek">
 Everyone’s code is always up to date
               </span>
@@ -323,14 +345,17 @@ There is no need to wait for someone to commit and push their code! EngineOne ke
                 
                 </p>
               </Grid.Column>
+              <Grid.Column width={5} >
+                <Corner  x={0} y={0} width={68} height={80} />
+              </Grid.Column>
             </Grid.Row>
-
             
             <Grid.Row>
-            <Grid.Column width={2}>
+            <Grid.Column width={5} textAlign='right'>
+              <Corner right x={0} y={0} width={68} height={80} />
             </Grid.Column>
-            <Grid.Column width={10} textAlign="right">
-              <Header as='h3'>
+            <Grid.Column width={8} textAlign="right">
+              <Header as='h3' style={{color:'#EA4E83'}}>
               <span className="lang geek">
 Conflicts are detected before they occur
               </span>
@@ -347,11 +372,10 @@ Because EngineOne syncs the code near real-time, it can detect when developers a
               
               </p>
             </Grid.Column>
-            <Grid.Column width={1}>
-            </Grid.Column>
-            <Grid.Column width={3}>
+            <Grid.Column width={3} textAlign='center'>
               <Image
-                style={{width:'100%'}}
+                centered
+                style={{width:'80%'}}
                 src='proactive-pic.svg'
               />
               </Grid.Column>
@@ -364,10 +388,8 @@ Because EngineOne syncs the code near real-time, it can detect when developers a
                   src='block-pic.svg'
                 />
                 </Grid.Column>
-              <Grid.Column width={1}>
-              </Grid.Column>
-              <Grid.Column width={10}>
-                <Header as='h3'>
+              <Grid.Column width={8}>
+                <Header as='h3' style={{color:'#A775D3'}}>
                 <span className="lang geek">
 Collaborate without internet access with blockchain!
               </span>
@@ -384,7 +406,6 @@ EngineOne is designed to be offline first. And it takes that a step further by e
                 </p>
               </Grid.Column>
             </Grid.Row>
-
           </Grid>
         </Segment>
 
@@ -497,21 +518,18 @@ EngineOne works with your existing tools, rather than against them. It supports 
                 
               </Grid.Column>
             </Grid.Row>
-
+            <Grid.Row>
+              <Grid.Column textAlign='center'>
+              <br/><br/><br/>
+              <Button primary  size='large'  onClick={this.show}>
+                Get Early Access
+              </Button>
+              </Grid.Column>
+            </Grid.Row>
           </Grid>
         </Segment>
 
 
-{/* 
-        <Segment  className="gradient" style={{ padding: '0em' }} vertical>
-          <Grid celled='internally' columns='equal' stackable>
-            <Grid.Row textAlign='center'>
-              <Grid.Column >
-                &nbsp;
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment> */}
 
         <Segment className="footer" vertical style={{ padding: '0' }}>
         <Container>

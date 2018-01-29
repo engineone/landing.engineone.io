@@ -33,7 +33,7 @@ export default class Connector extends Component {
     const { x,y,width,height } = this.props;
     const { screenHeight,screenWidth,parentWidth,parentHeight } = this.state;
     const pxwidth = width/100 * parentWidth;
-    const pxheight = height; // /100 * screenHeight;
+    const pxheight = 130; //height; // /100 * screenHeight;
     // const x = (-from.x+to.x+to.width/2);
     // const y = from.height;
     // const width = -(to.x + to.width/2) + (from.x + from.width/2);
@@ -49,16 +49,23 @@ export default class Connector extends Component {
 
 
     return (
-        <svg ref='child' 
+        <svg ref='child' style={{position:'relative',top:'60px'}}
             width={pxwidth+"px"} height={pxheight+"px"} viewBox={"0 0 "+pxwidth+" "+pxheight} >
             {(this.props.right)?
-                <path d={`M${pxwidth-3},0 L${pxwidth-3} ${pxheight/2-10} q 0 10 -10 10 L 13 ${pxheight/2} q -10 0 -10 10 L 3 ${pxheight}`} 
+                <path d={`M${pxwidth-8},8 L18 8 q -10 0 -10 10 L 8 30`} 
             fill="none" stroke="#4A90E2" strokeWidth="3"></path>
             :
-                <path d={`M3,0 L3 ${pxheight/2-10} q 0 10 10 10 L ${pxwidth-13} ${pxheight/2} q 10 0 10 10 L ${pxwidth-3} ${pxheight}`} 
-            fill="none" stroke="#4A90E2" strokeWidth="3"></path>
+                <path d={`M0,8 L${pxwidth-18} 8 q 10 0 10 10 L ${pxwidth-8} 30`}
+                fill="none" stroke="#4A90E2" strokeWidth="3"></path>
             }
-        </svg>
+
+
+    <g id="Icosn-upadate" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-dasharray="7" stroke-linecap="square">
+        <path d={`M${(this.props.right)?8:pxwidth-8},30 L${(this.props.right)?8:pxwidth-8},${pxheight}`} id="Line-22" stroke="#4A90E2" strokeWidth="3"></path>
+    </g>
+<circle id="Oval-6" cx={(this.props.right)?8:pxwidth-8} cy={pxheight-8} r="8" fill="#4A90E2"></circle>
+              
+</svg>
     )
   }
 }
