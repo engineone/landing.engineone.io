@@ -14,11 +14,19 @@ body, .ui.header, p {
 
 .legacy {
     text-align: left;
-    color: rgba(255, 255, 255, 0.6);
+    color: white;
     font-size: 0.85em;
+    background: #F5A623;
+    position: absolute;
+    top:0;
+    z-index: 100;
+    width: 100%;
+    padding: 8px;
+    text-align: center;
 }
 .legacy a:any-link {
     color: white;
+    text-decoration: underline;
 }
 
 .features.ui.vertical.segment {

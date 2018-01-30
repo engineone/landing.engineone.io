@@ -15,7 +15,8 @@ import {
   Segment,
   Visibility,
   Form,
-  Modal
+  Modal,
+  Responsive
 } from 'semantic-ui-react'
 
 export default class HomepageLayout extends Component {
@@ -105,16 +106,20 @@ We’re really excited about what EngineOne can do for you!
         >
 
           {/* minHeight: '100vh', */}
+          <div className='legacy'>Click <a href="https://legacy.engineone.io">here</a> to visit the previous version of EngineOne</div>
           <Segment
             className="home"
             textAlign='center'
-            style={{  paddingTop: '1em', paddingBottom: 0}}
+            style={{  paddingTop: '4em', paddingBottom: 0}}
             vertical
           >
-          <img src="/bg.svg" style={{position:"absolute", width:'100%', height:'75%', top:0,right:0,left:0,bottom:0}} />
+          <Responsive as={Image} maxWidth={768} src="/bg.svg" style={{position:"absolute", width:'200%', height:'86%', top:0,right:0,left:0,bottom:0}} />
+
+          <Responsive as={Image} minWidth={768} src="/bg.svg" style={{position:"absolute", width:'100%', height:'75%', top:0,right:0,left:0,bottom:0}} />
           
             
             <Container>
+            
               <Menu inverted borderless secondary pointing size='large'>
                 <div ><img src="logo-bw.svg" style={{position:'absolute', width:'200px', paddingTop:'12px'}}/></div>
                 <Menu.Item position='right'>
@@ -134,7 +139,7 @@ We’re really excited about what EngineOne can do for you!
             <Grid stackable verticalAlign='top'  > {/* style={{ minHeight: '75vh'}} */}
             <Grid.Row>
               <Grid.Column width={8}>
-                <div  style={{padding:'7em 0em'}}>
+                <div  style={{paddingTop:'6em'}}>
               <Header
               inverted
               as='h1'
@@ -155,23 +160,36 @@ We’re really excited about what EngineOne can do for you!
             Hundreds of hours are lost to admin tasks. EngineOne will reduce the time your developers spend on managing code by automating workflow
             </span>
             </Header>
-            <p className='legacy'>Click <a href="https://legacy.engineone.io">here</a> to visit the previous version of EngineOne</p>
+            
               </div>
+              <Responsive as={Header} minWidth={768} style={{paddingTop:'7em'}}>
+              
+              </Responsive>
             </Grid.Column>
-              <Grid.Column width={8} textAlign="center">
+              <Grid.Column only='tablet computer' width={8} textAlign="center">
                 <Image
+                  centered
                   style={{width:'85%'}}
                   src='man.svg'
                 />
               </Grid.Column>
-            </Grid.Row> 
 
-            <Grid.Row  style={{padding:0}}>
+              <Grid.Column only='mobile' width={8} textAlign="center">
+                <Image
+                  centered
+                  style={{width:'55%'}}
+                  src='man.svg'
+                />
+              </Grid.Column>
+            </Grid.Row> 
+              
+            <Responsive as={Grid.Row} minWidth={992}>
+            
               <Grid.Column width={8}></Grid.Column>
               <Grid.Column width={4} style={{padding:'0',marginLeft:'-5px'}}>
                 <Connector right x={0} y={0} width={100} height={50} />
               </Grid.Column>
-            </Grid.Row>
+            </Responsive>
 
             <Grid.Row style={{paddingTop:0}}>
               <Grid.Column textAlign="center" style={{padding:0, paddingBottom:'20px'}}>
@@ -196,9 +214,54 @@ We’re really excited about what EngineOne can do for you!
         <Segment inverted className="gradient" style={{ margin:0, padding: 0 }} >
         <Container>
         <Grid padded celled='internally' verticalAlign='top'>
-          <Grid.Row>
+        {/******* mobile only... ******/}
+        <Grid.Row only='mobile'>
+            <Grid.Column  width={8} textAlign='left' style={{paddingRight:'42px'}}>
+              <Header inverted as='h4'> 
+              <span className="lang geek">
+You might be overworking yourself!
+              </span>
+              <span className="lang eng">
+You are losing time &amp; money 
+              </span>
+              
+              </Header>
+              <p>
+              <span className="lang geek">
+Your job as a developer is building great software, yet you find yourself investing a lot of time on code management. You are constantly running commands to make your code accessible to others, and resolving conflicts because someone didn’t update their code regularly. Also, you have to remember to never pull before committing. Who made those rules?
+              </span>
+              <span className="lang eng">
+              We thought software developers write code all day every day. However, based on our research developers spend about 5 hours on admin tasks. This means, if you have 10 mid-level Developers costing you about $59 per hour (8 hours per day), you are losing around $2 950 per day, $14,750 per week or $59,000 per month to manual/admin tasks. In terms of time, a project that is due in 6 months will be delivered in 13 months.
+              </span>
+              
+              </p>
+              
+            </Grid.Column>
+            <Grid.Column  width={8} textAlign='right'  style={{paddingLeft:'42px'}}>
+            
+            <Header inverted as='h4'>
+            <span className="lang geek">
+Your code might be at risk!
+              </span>
+              <span className="lang eng">
+              Your project might be at risk!
+              </span>
+              </Header>
+            <p>
+            <span className="lang geek">
+Either due to unexpected conflicts or hardware failure, you can loose your code any day unless everyone you collaborate with makes regular backups and doesn’t go for 3 days without commiting. But why is this your responsibility? Your job is tough enough already! 
+              </span>
+              <span className="lang eng">
+              Current workflows are manual, as a result human errors are inevitable. Unless developers backup code regularly chances of them losing their code are still high. This may cause delays in project delivery.
+              </span>
+            
+            </p>
+          </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row only='tablet computer'>
             <Grid.Column  width={8} textAlign='left'>
-                <img src="ide.svg" style={{float:'left'}} /> 
+                <img src="ide.svg"  style={{float:'left'}}  /> 
               <div style={{marginLeft:'70px',marginRight:'25px'}}>
               <Header inverted as='h4'>
               <span className="lang geek">
@@ -252,24 +315,24 @@ Either due to unexpected conflicts or hardware failure, you can loose your code 
           <Header as='h2' className='solution'>EngineOne is the solution!</Header>
       </div>
 
-        <Segment className="benifits" style={{ paddingBottom: '0em' }} vertical>
-          <Grid container  verticalAlign='middle'>    
+        <Segment className="benifits" style={{ paddingBottom: '4em' }} vertical>
+          <Grid container verticalAlign='middle'>    
           
           <Grid.Row  style={{padding:0}}>
               <Grid.Column width={2}></Grid.Column>
               <Grid.Column width={6} >
-                <Connector dots right x={0} y={0} width={100} height={50} />
+                <Connector right x={0} y={0} width={100} height={50} />
               </Grid.Column>
             </Grid.Row>
 
             <Grid.Row>
-              <Grid.Column width={3}>
+              <Grid.Column mobile={6} tablet={4} computer={3}>
                 <Image
                   style={{width:'100%'}}
                   src='safe-pic.svg'
                 />
                 </Grid.Column>
-              <Grid.Column width={8}>
+              <Grid.Column  mobile={10} tablet={9} computer={8}>
                 <Header as='h3' style={{color:'#7A5DAF'}}><span className="lang geek">
 You just start coding!
               </span>
@@ -285,16 +348,16 @@ You just start coding!
               </span>
                 </p>
               </Grid.Column>
-              <Grid.Column width={5} >
+              <Grid.Column tablet={2} computer={5} only='tablet computer'>
                 <Corner  x={0} y={0} width={68} height={80} />
               </Grid.Column>
             </Grid.Row>
 
             <Grid.Row>
-              <Grid.Column width={5} textAlign='right'>
+              <Grid.Column textAlign='right' tablet={2} computer={5} only='tablet computer'>
                 <Corner right x={0} y={0} width={68} height={80} />
               </Grid.Column>
-              <Grid.Column width={8} textAlign="right">
+              <Grid.Column  mobile={10} tablet={9} computer={8} textAlign="right">
                 <Header as='h3'  style={{color:'#14B18E'}}><span className="lang geek">
 Code is backed up automatically…
               </span>
@@ -310,7 +373,7 @@ EngineOne picks up all the changes you are making to your code and syncs them up
               </span>
                 </p>
               </Grid.Column>
-              <Grid.Column width={3}>
+              <Grid.Column mobile={6} tablet={4} computer={3}>
                 <Image
                   style={{width:'100%'}}
                   src='ide-pic.svg'
@@ -319,13 +382,13 @@ EngineOne picks up all the changes you are making to your code and syncs them up
             </Grid.Row>
 
             <Grid.Row>
-              <Grid.Column width={3}>
+              <Grid.Column mobile={6} tablet={4} computer={3}>
                 <Image
                   style={{width:'100%'}}
                   src='community-pic.svg'
                 />
                 </Grid.Column>
-              <Grid.Column width={8}>
+              <Grid.Column  mobile={10} tablet={9} computer={8}>
                 <Header as='h3' style={{color:'#4A90E2'}}>
                 <span className="lang geek">
 Everyone’s code is always up to date
@@ -344,16 +407,16 @@ There is no need to wait for someone to commit and push their code! EngineOne ke
                 
                 </p>
               </Grid.Column>
-              <Grid.Column width={5} >
+              <Grid.Column  tablet={2} computer={5} only='tablet computer'>
                 <Corner  x={0} y={0} width={68} height={80} />
               </Grid.Column>
             </Grid.Row>
             
             <Grid.Row>
-            <Grid.Column width={5} textAlign='right'>
+            <Grid.Column  textAlign='right' tablet={2} computer={5} only='tablet computer'>
               <Corner right x={0} y={0} width={68} height={80} />
             </Grid.Column>
-            <Grid.Column width={8} textAlign="right">
+            <Grid.Column  mobile={10} tablet={9} computer={8} textAlign="right">
               <Header as='h3' style={{color:'#EA4E83'}}>
               <span className="lang geek">
 Conflicts are detected before they occur
@@ -371,7 +434,7 @@ Because EngineOne syncs the code near real-time, it can detect when developers a
               
               </p>
             </Grid.Column>
-            <Grid.Column width={3} textAlign='center'>
+            <Grid.Column mobile={6} tablet={4} computer={3} textAlign='center'>
               <Image
                 centered
                 style={{width:'80%'}}
@@ -381,13 +444,13 @@ Because EngineOne syncs the code near real-time, it can detect when developers a
           </Grid.Row>
 
           <Grid.Row>
-              <Grid.Column width={3}>
+              <Grid.Column mobile={6} tablet={4} computer={3}>
                 <Image
                   style={{width:'100%'}}
                   src='block-pic.svg'
                 />
                 </Grid.Column>
-              <Grid.Column width={8}>
+              <Grid.Column  mobile={10} tablet={9} computer={8}>
                 <Header as='h3' style={{color:'#A775D3'}}>
                 <span className="lang geek">
 Collaborate without internet access with blockchain!
@@ -404,11 +467,6 @@ EngineOne is designed to be offline first. And it takes that a step further by e
               </span>
                 </p>
               </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column textAlign='center'>
-            <img centered src='line-bottom.svg' />
-            </Grid.Column>
             </Grid.Row>
           </Grid>
         </Segment>
@@ -438,6 +496,11 @@ EngineOne is designed to be offline first. And it takes that a step further by e
         <Segment className="features" style={{ padding: '8em 0em' }} vertical>
         
           <Grid columns='equal' container stackable verticalAlign='top'>
+          <Grid.Row>
+              <Grid.Column textAlign='center'>
+            <img centered src='line-bottom.svg' style={{position:'absolute',top:'-185px'}} />
+            </Grid.Column>
+            </Grid.Row>
           <Grid.Row>
             <Grid.Column style={{textAlign:"center", paddingBottom:"2em"}} >
               <Header as='h2'>Features</Header>
