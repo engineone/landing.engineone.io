@@ -130,7 +130,7 @@ We’re really excited about what EngineOne can do for you!
               </Menu>
             </Container>
 
-            <Container>
+            <Container inverted>
             <Grid stackable verticalAlign='top'  > {/* style={{ minHeight: '75vh'}} */}
             <Grid.Row>
               <Grid.Column width={8}>
@@ -155,6 +155,7 @@ We’re really excited about what EngineOne can do for you!
             Hundreds of hours are lost to admin tasks. EngineOne will reduce the time your developers spend on managing code by automating workflow
             </span>
             </Header>
+            <p className='legacy'>Click <a href="https://legacy.engineone.io">here</a> to visit the previous version of EngineOne</p>
               </div>
             </Grid.Column>
               <Grid.Column width={8} textAlign="center">
@@ -251,7 +252,7 @@ Either due to unexpected conflicts or hardware failure, you can loose your code 
           <Header as='h2' className='solution'>EngineOne is the solution!</Header>
       </div>
 
-        <Segment className="benifits" style={{ paddingBottom: '6em' }} vertical>
+        <Segment className="benifits" style={{ paddingBottom: '0em' }} vertical>
           <Grid container  verticalAlign='middle'>    
           
           <Grid.Row  style={{padding:0}}>
@@ -403,6 +404,11 @@ EngineOne is designed to be offline first. And it takes that a step further by e
               </span>
                 </p>
               </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column textAlign='center'>
+            <img centered src='line-bottom.svg' />
+            </Grid.Column>
             </Grid.Row>
           </Grid>
         </Segment>
