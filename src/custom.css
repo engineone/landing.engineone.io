@@ -89,7 +89,7 @@ body, .ui.header, p {
 .floating {
     position: fixed;
     bottom: 25px;
-    right: 25px;
+    left: 25px;
     border-radius: 2rem;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
 }

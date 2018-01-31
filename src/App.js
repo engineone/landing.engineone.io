@@ -115,7 +115,7 @@ We’re really excited about what EngineOne can do for you!
           >
           <Responsive as={Image} maxWidth={768} src="/bg.svg" style={{position:"absolute", width:'200%', height:'86%', top:0,right:0,left:0,bottom:0}} />
 
-          <Responsive as={Image} minWidth={768} src="/bg.svg" style={{position:"absolute", width:'100%', height:'75%', top:0,right:0,left:0,bottom:0}} />
+          <Responsive as={Image} minWidth={768} src="/bg.svg" style={{position:"absolute", width:'100%', height:'81%', top:0,right:0,left:0,bottom:0}} />
           
             
             <Container>
@@ -136,14 +136,14 @@ We’re really excited about what EngineOne can do for you!
             </Container>
 
             <Container inverted>
-            <Grid stackable verticalAlign='top'  > {/* style={{ minHeight: '75vh'}} */}
+            <Grid stackable verticalAlign='middle'  > {/* style={{ minHeight: '75vh'}} */}
             <Grid.Row>
               <Grid.Column width={8}>
-                <div  style={{paddingTop:'6em'}}>
+                <div  style={{paddingTop:'4em',textAlign:'left'}}>
               <Header
               inverted
               as='h1'
-              style={{ textAlign:'left', fontSize: '2em' }}
+              style={{ fontSize: '2em' }}
             >
             <span className="lang geek">Spend more time writing code, and less time managing it!</span>
             <span className="lang eng">There are hidden costs in your software development process</span>
@@ -151,7 +151,7 @@ We’re really excited about what EngineOne can do for you!
             <Header
               inverted
               as='h2'
-              style={{ textAlign:'left', fontSize: '1em', fontWeight: 'normal' }}
+              style={{  fontSize: '1em', fontWeight: 'normal', margin:'1.2em 0' }}
             >
             <span className="lang geek">
             EngineOne is a blockchain-based code syncing service that helps Developers spend more time coding and less time managing code by automating their version control workflow.
@@ -160,11 +160,13 @@ We’re really excited about what EngineOne can do for you!
             Hundreds of hours are lost to admin tasks. EngineOne will reduce the time your developers spend on managing code by automating workflow
             </span>
             </Header>
-            
+            <Button inverted  onClick={this.show}>
+                  Get Early Access
+            </Button>
               </div>
+              {/* padding for mobile: 
               <Responsive as={Header} minWidth={768} style={{paddingTop:'7em'}}>
-              
-              </Responsive>
+              </Responsive>*/}
             </Grid.Column>
               <Grid.Column only='tablet computer' width={8} textAlign="center">
                 <Image
@@ -183,7 +185,7 @@ We’re really excited about what EngineOne can do for you!
               </Grid.Column>
             </Grid.Row> 
               
-            <Responsive as={Grid.Row} minWidth={992}>
+            <Responsive as={Grid.Row} minWidth={992} style={{padding:'4px'}}>
             
               <Grid.Column width={8}></Grid.Column>
               <Grid.Column width={4} style={{padding:'0',marginLeft:'-5px'}}>
@@ -191,8 +193,8 @@ We’re really excited about what EngineOne can do for you!
               </Grid.Column>
             </Responsive>
 
-            <Grid.Row style={{paddingTop:0}}>
-              <Grid.Column textAlign="center" style={{padding:0, paddingBottom:'20px'}}>
+            <Grid.Row style={{padding:0}}>
+              <Grid.Column textAlign="center" style={{padding:0, paddingBottom:'17px'}}>
 
             <Button.Group className='langbuttons'>
               <Button style={{width:'100px'}} inverted={lang!='geek'} primary={lang=='geek'} onClick={()=>this.setLang("geek")}>Developer</Button>
@@ -572,7 +574,7 @@ EngineOne can be customised to assist with your version control workflow, whethe
               <Header as='h4'>More Integrations</Header>
               <p>
               <span className="lang geek">
-EngineOne works with your existing tools, rather than against them. It supports git, svn and Mercurial out the box. And with a powerful API, it can be integrated with task managers and CI tools and other 3rd Party tools.
+EngineOne works with your existing tools, rather than against them. It supports Git, SVN and Mercurial out the box. And with a powerful API, it can be integrated with task managers and CI tools and other 3rd Party tools.
               </span>
               <span className="lang eng">
               EngineOne works with your existing tools, rather than against them. And with a powerful API, it can be integrated with task managers and other 3rd Party tools.
