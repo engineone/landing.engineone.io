@@ -128,9 +128,7 @@ export default class HomepageLayout extends Component {
           once={false}>
 
           {/* minHeight: '100vh', */}
-          <div className='legacy'>Click
-            <a href="https://engineone.co">here</a>
-            to visit the previous version of EngineOne</div>
+          <div className='legacy'>Click <a href="https://engineone.co">here</a> to visit the previous version of EngineOne</div>
           <Segment
             className="home"
             textAlign='center'
