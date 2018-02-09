@@ -67,7 +67,7 @@ export default class SubscribeForm extends React.Component {
             </p>
         {status === "sending" && <Dimmer active inverted><Loader size='medium'>Signing you up</Loader></Dimmer>}
         {status === "success" && <Message positive>
-            <Message.Header>Thank you! Please check your inbox for a confirmation email.</Message.Header>
+            <Message.Header>Thank you!</Message.Header>
             <p>Please help more people discover EngineOne by sharing this pre-written tweet:</p>
             <a href={tweetUrl} target="_blank"><Icon size='large' name='twitter' /> Tweet now</a>
         </Message>}
