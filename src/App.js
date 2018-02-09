@@ -117,16 +117,8 @@ export default class HomepageLayout extends Component {
               bottom: 0
             }}/>
 
-<div id="skew"><span></span></div>
-
-          <div id="stripes">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
             <Responsive
-              /*as={Image}
+              as={Image}
               minWidth={768}
               src="/bg.svg"
               style={{
@@ -137,7 +129,7 @@ export default class HomepageLayout extends Component {
               right: 0,
               left: 0,
               bottom: 0
-            }}*//>
+            }}/>
 
             <Container>
 
@@ -264,7 +256,7 @@ export default class HomepageLayout extends Component {
                     padding: '0',
                     marginLeft: '-3px'
                   }}>
-                    <Connector right white x={0} y={0} width={100} height={50}/>
+                    <Connector right x={0} y={0} width={100} height={50}/>
                   </Grid.Column>
                 </Responsive>
 

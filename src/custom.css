@@ -40,10 +40,9 @@ body, .ui.header, p {
 
 
 .home.ui.vertical.segment {
-    /* background-image: linear-gradient(-179deg, #129EE6 0%, #3366CC 100%); 
+    /* background-image: linear-gradient(-179deg, #129EE6 0%, #3366CC 100%); */
     background-image: url("/connect.png") ;       
-    background-repeat: repeat; */
-    background-color: #fff;
+    background-repeat: repeat;
 }
 
 .how.ui.vertical.segment {
@@ -155,16 +154,11 @@ body, .ui.header, p {
 
 .gradient {
     /* background:  linear-gradient(-90deg, #129EE6 0%, #3366CC 99%) !important; */
-    background: #fff !important;
+    background: #333399 !important;
     background-image: url("/white-line-bg.svg") !important;
     background-repeat: repeat-y !important;
     background-position: center !important;
-    color: #333 !important;
     border-bottom: 2px solid #4085DE !important;
-}
-
-.gradient .header {
-    color: rgb(37, 126, 228) !important;
 }
 
 .gradient .right {

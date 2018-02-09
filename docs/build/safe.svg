@@ -1,0 +1,18 @@
+
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icosn-upadate" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="New-Design" transform="translate(-1313.000000, -901.000000)">
+            <g id="Sync" transform="translate(1313.000000, 901.000000)" fill="#F488A9">
+                <rect id="Rectangle-3" x="0" y="0" width="54" height="54" rx="6"></rect>
+            </g>
+            <g id="warning.svg" transform="translate(1324.000000, 912.000000)">
+                <circle id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="16" cy="23" r="2"></circle>
+                <circle id="Oval" stroke="#FFFFFF" stroke-width="3" cx="16" cy="16" r="16"></circle>
+                <path d="M17.9378468,11.6628571 C17.6981132,14.7828571 17.1187569,17.7828571 17.1187569,17.7828571 C17.0188679,18.7771429 16.5394007,19 15.9800222,19 C15.3806881,19 14.9811321,18.7771429 14.8612653,17.7828571 C14.8612653,17.7828571 14.3218646,14.7828571 14.0621532,11.6628571 C13.9223085,9.64 14.0621532,8.71428571 14.0621532,8.71428571 C14.0621532,7.77142857 14.9211987,7.03428571 15.9800222,7 C17.0588235,7.01714286 17.9378468,7.75428571 17.9378468,8.71428571 C17.9378468,8.71428571 18.0776915,9.64 17.9378468,11.6628571 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
