@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import Connector from './Connector'
 import Corner from './Corner'
+import Calculator from './Calculator';
 import {
   Button,
   Container,
@@ -17,7 +18,8 @@ import {
   Form,
   Modal,
   Responsive
-} from 'semantic-ui-react'
+} from 'semantic-ui-react';
+import SubscribeFrom from './Subscription';
 
 export default class HomepageLayout extends Component {
   state = {
@@ -42,43 +44,7 @@ export default class HomepageLayout extends Component {
         <Modal size="small" open={open} onClose={this.close} closeIcon>
           <Header icon='mail outline' content='Sign Up for Early Access'/>
           <Modal.Content>
-            <p>
-              Sign up now to be notified about the early access release program.<br/>
-              Space is limited so book your spot now.
-              <br/>
-              We’re really excited about what EngineOne can do for you!
-
-            </p>
-
-            <Form
-              action="https://lepsta.us17.list-manage.com/subscribe/post?u=e8b7064010b896656512ed4a7&amp;id=978ff8a33a"
-              method="post"
-              id="mc-embedded-subscribe-form"
-              name="mc-embedded-subscribe-form"
-              target="_blank">
-              <Form.Field>
-                <label>Full Name</label>
-                <input name="FNAME" placeholder='Full Name'/>
-              </Form.Field>
-              <Form.Field>
-                <label>Email</label>
-                <input name="EMAIL" required type="email" placeholder='Email Address'/>
-              </Form.Field>
-              <div
-                style={{
-                position: "absolute",
-                left: "-5000px"
-              }}
-                aria-hidden="true"><input
-                type="text"
-                name="b_e8b7064010b896656512ed4a7_978ff8a33a"
-                tabindex="-1"
-                value=""/></div>
-              <Button type='submit' color='green'>
-                <Icon name='checkmark'/>Sign Up
-              </Button>
-            </Form>
-
+            <SubscribeFrom />
           </Modal.Content>
           {/* <Modal.Actions>
       <Button color='green'>
@@ -108,7 +74,7 @@ export default class HomepageLayout extends Component {
                   {/* <Menu.Item as='a'>Learn</Menu.Item>
                 <Menu.Item as='a'>Community</Menu.Item>
                 <Menu.Item as='a'>Blog</Menu.Item> */}
-                  <Button primary size='large' onClick={this.show}>
+                  <Button primary size='small' onClick={this.show}>
                     Get Early Access
                   </Button>
                 </Menu.Item>
@@ -151,8 +117,16 @@ export default class HomepageLayout extends Component {
               bottom: 0
             }}/>
 
+<div id="skew"><span></span></div>
+
+          <div id="stripes">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
             <Responsive
-              as={Image}
+              /*as={Image}
               minWidth={768}
               src="/bg.svg"
               style={{
@@ -163,7 +137,7 @@ export default class HomepageLayout extends Component {
               right: 0,
               left: 0,
               bottom: 0
-            }}/>
+            }}*//>
 
             <Container>
 
@@ -181,7 +155,7 @@ export default class HomepageLayout extends Component {
                 <Menu.Item as='a'>Community</Menu.Item>
                 <Menu.Item as='a'>Blog</Menu.Item>
                 */}
-                  <Button inverted size='huge' onClick={this.show}>
+                  <Button inverted size='small' onClick={this.show}>
                     Get Early Access
                   </Button>
                 </Menu.Item>
@@ -198,6 +172,23 @@ export default class HomepageLayout extends Component {
                       paddingTop: '4em',
                       textAlign: 'left'
                     }}>
+                    <Button.Group size="small" className='langbuttons'>
+                      <Button
+                        style={{
+                        width: '100px'
+                      }}
+                        inverted={lang != 'geek'}
+                        primary={lang == 'geek'}
+                        onClick={() => this.setLang("geek")}>Developer</Button>
+                      {/* <Button.Or text="<>"/> */}
+                      <Button
+                        style={{
+                        width: '100px'
+                      }}
+                        inverted={lang != 'eng'}
+                        primary={lang == 'eng'}
+                        onClick={() => this.setLang("eng")}>Business</Button>
+                    </Button.Group>
                       <Header
                         inverted
                         as='h1'
@@ -216,39 +207,46 @@ export default class HomepageLayout extends Component {
                         margin: '1.2em 0'
                       }}>
                         <span className="lang geek">
-                          EngineOne is a blockchain-based code syncing service that helps Developers spend
-                          more time coding and less time managing code by automating their version control
+                          EngineOne is a blockchain-based version control and code syncing service that helps developers spend
+                          more time coding and less time managing code by automating their code management
                           workflow.
                         </span>
                         <span className="lang eng">
-                          Hundreds of hours are lost to admin tasks. EngineOne will reduce the time your
-                          developers spend on managing code by automating workflow
+                          Hundreds of hours are lost to admin and code management tasks. EngineOne will reduce the time your
+                          developers spend on managing code by automating their workflow.
                         </span>
                       </Header>
-                      <Button inverted onClick={this.show}>
-                        Get Early Access
-                      </Button>
                     </div>
                     {/* padding for mobile:
               <Responsive as={Header} minWidth={768} style={{paddingTop:'7em'}}>
               </Responsive>*/}
                   </Grid.Column>
                   <Grid.Column only='tablet computer' width={8} textAlign="center">
+                  <div className="lang geek">
                     <Image
                       centered
                       style={{
                       width: '85%'
                     }}
                       src='man.svg'/>
+                  </div>
+                  <div className="lang eng calculator">
+                    <Calculator />
+                  </div>
                   </Grid.Column>
 
                   <Grid.Column only='mobile' width={8} textAlign="center">
-                    <Image
-                      centered
-                      style={{
-                      width: '55%'
-                    }}
-                      src='man.svg'/>
+                    <div className="lang geek">
+                      <Image
+                        centered
+                        style={{
+                        width: '85%'
+                      }}
+                        src='man.svg'/>
+                    </div>
+                    <div className="lang eng calculator">
+                      <Calculator />
+                    </div>
                   </Grid.Column>
                 </Grid.Row>
 
@@ -264,9 +262,9 @@ export default class HomepageLayout extends Component {
                     width={4}
                     style={{
                     padding: '0',
-                    marginLeft: '-5px'
+                    marginLeft: '-3px'
                   }}>
-                    <Connector right x={0} y={0} width={100} height={50}/>
+                    <Connector right white x={0} y={0} width={100} height={50}/>
                   </Grid.Column>
                 </Responsive>
 
@@ -280,23 +278,9 @@ export default class HomepageLayout extends Component {
                     paddingBottom: '17px'
                   }}>
 
-                    <Button.Group className='langbuttons'>
-                      <Button
-                        style={{
-                        width: '100px'
-                      }}
-                        inverted={lang != 'geek'}
-                        primary={lang == 'geek'}
-                        onClick={() => this.setLang("geek")}>Developer</Button>
-                      {/* <Button.Or text="<>"/> */}
-                      <Button
-                        style={{
-                        width: '100px'
-                      }}
-                        inverted={lang != 'eng'}
-                        primary={lang == 'eng'}
-                        onClick={() => this.setLang("eng")}>Business</Button>
-                    </Button.Group>
+                  <Button primary inverted onClick={this.show} style={{color: '#fff'}}>
+                    Get Early Access
+                  </Button>
 
                   </Grid.Column>
                 </Grid.Row>
@@ -307,7 +291,7 @@ export default class HomepageLayout extends Component {
             <img
               style={{
               position: 'relative',
-              left: '-2px',
+              left: '0px',
               bottom: '-6px'
             }}
               src='line-top.svg'/>
@@ -319,12 +303,13 @@ export default class HomepageLayout extends Component {
           className="gradient"
           style={{
           margin: 0,
-          padding: 0
+          paddingTop: '1rem',
+          borderRadius: 0
         }}>
           <Container>
             <Grid padded celled='internally' verticalAlign='top'>
               {/******* mobile only... ******/}
-              <Grid.Row only='mobile'>
+              <Grid.Row only='mobile' style={{boxShadow: 'none'}}>
                 <Grid.Column
                   width={8}
                   textAlign='left'
@@ -392,7 +377,7 @@ export default class HomepageLayout extends Component {
                 </Grid.Column>
               </Grid.Row>
 
-              <Grid.Row only='tablet computer'>
+              <Grid.Row only='tablet computer' style={{boxShadow: 'none'}}>
                 <Grid.Column width={8} textAlign='left'>
                   <img
                     src="ide.svg"
@@ -404,30 +389,27 @@ export default class HomepageLayout extends Component {
                     marginLeft: '70px',
                     marginRight: '25px'
                   }}>
-                    <Header inverted as='h4'>
+                    <Header inverted as='h3'>
                       <span className="lang geek">
                         You might be overworking yourself!
                       </span>
                       <span className="lang eng">
-                        You are losing time &amp; money
+                        You are not in total control
                       </span>
 
                     </Header>
                     <p>
                       <span className="lang geek">
-                        Your job as a developer is building great software, yet you find yourself
-                        investing a lot of time on code management. You are constantly running commands
-                        to make your code accessible to others, and resolving conflicts because someone
-                        didn’t update their code regularly. Also, you have to remember to never pull
-                        before committing. Who made those rules?
+                        Your job as a developer is building great software, yet you spend a lot of time 
+                        managing code. You are constantly running commands to make your code accessible 
+                        to others, and resolving conflicts because someone didn't update their code regularly. 
+                        Also, you have to remember to never pull before committing. Who made those rules?
                       </span>
                       <span className="lang eng">
-                        We thought software developers write code all day every day. However, based on
-                        our research developers spend about 5 hours on admin tasks. This means, if you
-                        have 10 mid-level Developers costing you about $59 per hour (8 hours per day),
-                        you are losing around $2 950 per day, $14,750 per week or $59,000 per month to
-                        manual/admin tasks. In terms of time, a project that is due in 6 months will be
-                        delivered in 13 months.
+                        It's hard to stay in control without good visibility. Current code management
+                        solutions rely on human input to keep everyone up to date. Which means that
+                        you only learn what was worked on when the developer finaly gets a chance to push the code.
+                        And it's often too late. You need more control.
                       </span>
 
                     </p>
@@ -444,7 +426,7 @@ export default class HomepageLayout extends Component {
                     marginRight: '70px',
                     marginLeft: '25px'
                   }}>
-                    <Header inverted as='h4'>
+                    <Header inverted as='h3'>
                       <span className="lang geek">
                         Your code might be at risk!
                       </span>
@@ -457,12 +439,12 @@ export default class HomepageLayout extends Component {
                         Either due to unexpected conflicts or hardware failure, you can loose your code
                         any day unless everyone you collaborate with makes regular backups and doesn’t
                         go for 3 days without commiting. But why is this your responsibility? Your job
-                        is tough enough already!
+                        is tough enough already! Besides, that just doesn't sound like a mdern solution.
                       </span>
                       <span className="lang eng">
                         Current workflows are manual, as a result human errors are inevitable. Unless
-                        developers backup code regularly chances of them losing their code are still
-                        high. This may cause delays in project delivery.
+                        developers backup code regularly chances of them losing their code due to hardware failure or human error are still
+                        high. This causes delays in project delivery.
                       </span>
 
                     </p>
@@ -478,12 +460,13 @@ export default class HomepageLayout extends Component {
           margin: '0 auto',
           textAlign: 'center',
           position: 'relative',
-          left: '-4px',
-          top: '-135px',
-          marginBottom: '-110px'
+          //left: '-4px',
+          //top: '-135px',
         }}>
-          <img src='seal.svg'/>
-          <Header as='h2' className='solution'>EngineOne is the solution!</Header>
+          <div style={{position: 'absolute', left: '50%'}}>
+          <img src='seal.svg' style={{position: 'relative', top: '-140px', left:'-50%'}} />
+          </div>
+          <Header as='h2' style={{paddingTop: '60px', paddingBottom: '10px'}} className='solution'>EngineOne is the solution!</Header>
         </div>
 
         <Segment
@@ -498,8 +481,8 @@ export default class HomepageLayout extends Component {
               padding: 0
             }}>
               <Grid.Column width={2}></Grid.Column>
-              <Grid.Column width={6}>
-                <Connector right x={0} y={0} width={100} height={50}/>
+              <Grid.Column width={6} style={{paddingLeft: "5px"}}>
+                <Connector white={false} right x={0} y={0} width={100} height={50}/>
               </Grid.Column>
             </Grid.Row>
 
@@ -751,89 +734,125 @@ export default class HomepageLayout extends Component {
 
             <Grid.Row>
               <Grid.Column >
-                <img src="feature-offline.svg"/>
-                <Header as='h4'>
-                  <span className="lang geek">
-                    Offline First
-                  </span>
-                  <span className="lang eng">
-                    Collaborate offline
-                  </span>
-                </Header>
-                <p>
-                  <span className="lang geek">
-                    Your code change history is stored even if you are working offline. And if you
-                    are working in a localised team, EngineOne's Self-Organising-Network allows
-                    teams to seamlessly collaborate online and offline.
-                  </span>
-                  <span className="lang eng">
-                    Your code change history is stored even if you are working offline. And if you
-                    are working in a localised team, EngineOne allows teams to seamlessly
-                    collaborate online and offline.
-                  </span>
-
-                </p>
+                <Grid container>
+                  <Grid.Row>
+                    <Grid.Column width={3} style={{padding: '0'}}>
+                      <img src="feature-offline.svg"/>
+                    </Grid.Column>
+                    <Grid.Column width={13} style={{padding: '0'}}>
+                      <Header as='h4'>
+                        <span className="lang geek">
+                          Offline First
+                        </span>
+                        <span className="lang eng">
+                          Collaborate offline
+                        </span>
+                      </Header>
+                      <p>
+                        <span className="lang geek">
+                          Your code change history is stored even if you are working offline. And if you
+                          are working in a localised team, EngineOne's Self-Organising-Network allows
+                          teams to seamlessly collaborate online and offline.
+                        </span>
+                        <span className="lang eng">
+                          Your code change history is stored even if you are working offline. And if you
+                          are working in a localised team, EngineOne allows teams to seamlessly
+                          collaborate online and offline.
+                        </span>
+                      </p>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
               </Grid.Column>
               <Grid.Column >
-                <img src="feature-detect.svg"/>
-                <Header as='h4'>Early Conflict Detection</Header>
-                <p>
-                  <span className="lang geek">
-                    Unlike other solutions, EngineOne alerts you of potential code conflicts before
-                    they become big problems.
-                  </span>
-                  <span className="lang eng">
-                    EngineOne alerts you of potential issues before they become big problems.
-                  </span>
-
-                </p>
+                <Grid container>
+                  <Grid.Row>
+                    <Grid.Column width={3} style={{padding: '0'}}>
+                      <img src="feature-detect.svg"/>                      
+                    </Grid.Column>
+                    <Grid.Column width={13} style={{padding: '0'}}>
+                      <Header as='h4'>Early Conflict Detection</Header>                      
+                      <p>
+                        <span className="lang geek">
+                          Unlike other solutions, EngineOne alerts you of potential code conflicts before
+                          they become big problems.
+                        </span>
+                        <span className="lang eng">
+                          EngineOne alerts you of potential issues before they become big problems.
+                        </span>
+                      </p>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
               </Grid.Column>
               <Grid.Column >
-                <img src="feature-extend.svg"/>
-                <Header as='h4'>Extendable</Header>
-                <p>
-                  Plugins allow new features to be added to the EngineOne platform.
-                </p>
+                <Grid container>
+                  <Grid.Row>
+                    <Grid.Column width={3} style={{padding: '0'}}>
+                      <img src="feature-extend.svg"/>                                          
+                    </Grid.Column>
+                    <Grid.Column width={13} style={{padding: '0'}}>
+                      <Header as='h4'>Extendable</Header>                      
+                      <p>
+                        Plugins allow new features to be added to the EngineOne platform.
+                      </p>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
               </Grid.Column>
             </Grid.Row>
 
-            <Grid.Row>
+            <Grid.Row style={{marginTop: '1rem'}}>
               <Grid.Column >
-                <img src="feature-custom.svg"/>
-                <Header as='h4'>Customisable Workflow</Header>
-                <p>
-                  <span className="lang geek">
-                    EngineOne can be customised to assist with your version control workflow,
-                    whether you use git-flow or single-branch methodologies.
-                  </span>
-                  <span className="lang eng">
-                    EngineOne can be customised to assist with your software development workflow.
-                  </span>
-
-                </p>
+                <Grid container>
+                  <Grid.Row>
+                    <Grid.Column width={3} style={{padding: '0'}}>
+                      <img src="feature-custom.svg"/>                                                               
+                    </Grid.Column>
+                    <Grid.Column width={13} style={{padding: '0'}}>
+                      <Header as='h4'>Customisable Workflow</Header>                      
+                      <p>
+                        <span className="lang geek">
+                          EngineOne can be customised to assist with your version control workflow,
+                          whether you use git-flow or single-branch collaboration, EngineOne helps you maintain that freedom.
+                        </span>
+                        <span className="lang eng">
+                          EngineOne can be customised to assist with your software development workflow.
+                        </span>
+                      </p>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
               </Grid.Column>
-              <Grid.Column >
-                <img src="feature-integrate.svg"/>
-                <Header as='h4'>More Integrations</Header>
-                <p>
-                  <span className="lang geek">
-                    EngineOne works with your existing tools, rather than against them. It supports
-                    Git, SVN and Mercurial out the box. And with a powerful API, it can be
-                    integrated with task managers and CI tools and other 3rd Party tools.
-                  </span>
-                  <span className="lang eng">
-                    EngineOne works with your existing tools, rather than against them. And with a
-                    powerful API, it can be integrated with task managers and other 3rd Party tools.
-                  </span>
-
-                </p>
+              <Grid.Column>
+                <Grid container>
+                  <Grid.Row>
+                    <Grid.Column width={3} style={{padding: '0'}}>
+                      <img src="feature-integrate.svg"/>                                                               
+                    </Grid.Column>
+                    <Grid.Column width={13} style={{padding: '0'}}>
+                      <Header as='h4'>More Integrations</Header>                      
+                      <p>
+                        <span className="lang geek">
+                          EngineOne works with your existing tools, rather than against them. It supports
+                          Git, SVN and Mercurial out the box. And with a powerful API, it can be
+                          integrated with task managers and CI tools and other 3rd Party tools.
+                        </span>
+                        <span className="lang eng">
+                          EngineOne works with your existing tools, rather than against them. And with a
+                          powerful API, it can be integrated with task managers and other 3rd Party tools.
+                        </span>
+                      </p>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
               </Grid.Column>
               <Grid.Column ></Grid.Column>
             </Grid.Row>
             <Grid.Row>
               <Grid.Column textAlign='center'>
                 <br/><br/><br/>
-                <Button primary size='large' onClick={this.show}>
+                <Button primary size='small' onClick={this.show}>
                   Get Early Access
                 </Button>
               </Grid.Column>
@@ -870,7 +889,7 @@ export default class HomepageLayout extends Component {
 
         {visible
           ? <div className='floating' title='Language'>
-              <Button.Group className='langbuttons' size='mini'>
+              <Button.Group className='langbuttons' size=''>
                 <Button
                   inverted={lang != 'geek'}
                   primary={lang == 'geek'}

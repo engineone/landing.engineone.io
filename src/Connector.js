@@ -8,7 +8,6 @@ export default class Connector extends Component {
         this.updateDimensions();
     }
     updateDimensions = () => {
-        console.log("resized!")
         this.setState({ 
             screenWidth: window.innerWidth, 
             screenHeight: window.innerHeight,
@@ -30,7 +29,7 @@ export default class Connector extends Component {
 
   render() {
     //const { from, to } = this.props;
-    const { x,y,width,height } = this.props;
+    const { x,y,width,height, white } = this.props;
     const { screenHeight,screenWidth,parentWidth,parentHeight } = this.state;
     const pxwidth = width/100 * parentWidth;
     const pxheight = height; // /100 * screenHeight;
@@ -46,6 +45,7 @@ export default class Connector extends Component {
     // left: x+"px"}}
 
     // style={{width:'100%'}}  preserveAspectRatio="none"
+    let strokeColor = white ? "#fff" : "#4A90E2";
 
 
     return (
@@ -53,10 +53,10 @@ export default class Connector extends Component {
             width={pxwidth+"px"} height={pxheight+"px"} viewBox={"0 0 "+pxwidth+" "+pxheight} >
             {(this.props.right)?
                 <path d={`M${pxwidth-3},0 L${pxwidth-3} ${pxheight/2-10} q 0 10 -10 10 L 13 ${pxheight/2} q -10 0 -10 10 L 3 ${pxheight}`} 
-            fill="none" stroke="#4A90E2" strokeWidth="4"></path>
+            fill="none" stroke={strokeColor}  strokeWidth="4"></path>
             :
                 <path d={`M3,0 L3 ${pxheight/2-10} q 0 10 10 10 L ${pxwidth-13} ${pxheight/2} q 10 0 10 10 L ${pxwidth-3} ${pxheight}`} 
-            fill="none" stroke="#4A90E2" strokeWidth="4"></path>
+            fill="none" stroke={strokeColor} strokeWidth="4"></path>
             }
         </svg>
     )
