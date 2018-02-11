@@ -8,13 +8,13 @@ export default class Calculator extends Component {
         this.state = { 
             numDevelopers: 1, 
             hourlyRate: 1,
-            savings: ((1 * 5) * 1) * 20
+            savings: ((1 * 2) * 1) * 20
         };
     }
 
     onDevelopersChange = (value) => {
         let change = value.values[0];
-        let savings = ((change * 5) * this.state.hourlyRate) * 20;
+        let savings = ((change * 2) * this.state.hourlyRate) * 20;
         this.setState({
             numDevelopers: change,
             savings: savings,
@@ -24,7 +24,7 @@ export default class Calculator extends Component {
 
     onRateChange = (value) => {
         let change = value.values[0]
-        let savings = ((this.state.numDevelopers * 5) * change) * 20;
+        let savings = ((this.state.numDevelopers * 2) * change) * 20;
         this.setState({
             hourlyRate: change,
             savings: savings,
