@@ -42,7 +42,7 @@ export default class HomepageLayout extends Component {
       <div className={lang}>
 
         <Modal size="small" open={open} onClose={this.close} closeIcon>
-          <Header icon='mail outline' content='Sign Up for Early Access'/>
+          <Header content='Sign Up for Early Access'/>
           <Modal.Content>
             <SubscribeFrom />
           </Modal.Content>

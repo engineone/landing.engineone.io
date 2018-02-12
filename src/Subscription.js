@@ -7,7 +7,8 @@ import {
     Message,
     Icon,
     Loader,
-    Dimmer
+    Dimmer,
+    Label
   } from 'semantic-ui-react';
 
 export default class SubscribeForm extends React.Component {
@@ -20,13 +21,22 @@ export default class SubscribeForm extends React.Component {
   }
   onSubmit = e => {
     e.preventDefault()
-    if (!this.input.value || this.input.value.length < 5 || this.input.value.indexOf("@") === -1) {
+    if (!this.name.value || this.name.value.length < 2) {
       this.setState({
-        status: "error"
+        status: "error",
+        msg: "First name is required"
       })
       return
     }
-    const url = "//lepsta.us16.list-manage.com/subscribe/post-json?u=a121ef3ead0d395e5e1bc1ffa&amp;id=95d80fe879" + `&EMAIL=${encodeURIComponent(this.input.value)}`;
+    if (!this.email.value || this.email.value.length < 5 || this.email.value.indexOf("@") === -1) {
+      this.setState({
+        status: "error",
+        msg: "Invalid email address"
+      })
+      return
+    }
+    const url = "//lepsta.us16.list-manage.com/subscribe/post-json?u=a121ef3ead0d395e5e1bc1ffa&amp;id=95d80fe879" + `&EMAIL=${encodeURIComponent(this.email.value)}&FNAME=${encodeURIComponent(this.name.value)}`;
+    console.log(url)
     this.setState(
       {
         status: "sending",
@@ -62,25 +72,40 @@ export default class SubscribeForm extends React.Component {
         <Form
         method="post"
         noValidate>
-            <p hidden={status === "success"}>
-              Sign up now to be notified about the early access release program. We’re really excited about what EngineOne can do for you!
+            <p>
+              <strong>First <Label circular color='blue'>20</Label> subscribers get awesome FREE t-shirts.</strong>
             </p>
+            <Message hidden={status === "success"}>
+              EngineOne has entered the quality assurance stage of development. Sign up now 
+              to be the first to know when it's publicly available. We’re really excited 
+              about what EngineOne can do for you!
+            </Message>
         {status === "sending" && <Dimmer active inverted><Loader size='medium'>Signing you up</Loader></Dimmer>}
         {status === "success" && <Message positive>
-            <Message.Header>Thank you!</Message.Header>
+            <Message.Header>Thank you {this.name.value}! We have sent you a confirmation email.</Message.Header>
             <p>Please help more people discover EngineOne by sharing this pre-written tweet:</p>
             <a href={tweetUrl} target="_blank"><Icon size='large' name='twitter' /> Tweet now</a>
         </Message>}
-        {status === "error" && <Message negative>Oops! Your email address seems invalid. Please correct it and try again.</Message>}
+        {status === "error" && <Message negative>{this.state.msg}</Message>}
         <Form.Field hidden={status === "success"}>
-          <label>Email</label>
+          <label>First name*</label>
           <input 
-            ref={node => (this.input = node)}
+            ref={node => (this.name = node)}
+            type="text"
+            defaultValue=""
+            name="FNAME"
+            required={true}
+            placeholder='First name'/>
+        </Form.Field>
+        <Form.Field hidden={status === "success"}>
+          <label>Email address*</label>
+          <input 
+            ref={node => (this.email = node)}
             type="email"
             defaultValue=""
             name="EMAIL"
             required={true}
-            placeholder='Email Address'/>
+            placeholder='Email address'/>
         </Form.Field>
         <div
           style={{
@@ -92,7 +117,7 @@ export default class SubscribeForm extends React.Component {
           name="b_a121ef3ead0d395e5e1bc1ffa_95d80fe879"
           tabIndex="-1"
           value=""/></div>
-        <Button type='submit' hidden={status === "success"} onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success"} color='green'>
+        <Button type='submit' hidden={this.state.status === "success"} onClick={this.onSubmit} disabled={this.state.status === "sending" || this.state.status === "success"} color='green'>
           Sign Up
         </Button>
       </Form>
