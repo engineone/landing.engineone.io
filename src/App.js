@@ -17,7 +17,8 @@ import {
   Visibility,
   Form,
   Modal,
-  Responsive
+  Responsive,
+  Label
 } from 'semantic-ui-react';
 import SubscribeFrom from './Subscription';
 
@@ -71,6 +72,8 @@ export default class HomepageLayout extends Component {
                   padding: '3px'
                 }}>
                   <Menu.Item as='a'>&nbsp;</Menu.Item>
+                 <Menu.Item as='a' href='http://careers.lepsta.com' target='_new'><Label as='span' color='teal' empty circular style={{marginRight: '.4rem'}}></Label>We're hiring!</Menu.Item>
+                  
                   {/* <Menu.Item as='a'>Learn</Menu.Item>
                 <Menu.Item as='a'>Community</Menu.Item>
                 <Menu.Item as='a'>Blog</Menu.Item> */}
@@ -142,11 +145,12 @@ export default class HomepageLayout extends Component {
         paddingTop: '12px'
       }}/></div>
                 <Menu.Item position='right'>
-                  {/*
-                 <Menu.Item as='a'>Learn</Menu.Item>
-                <Menu.Item as='a'>Community</Menu.Item>
-                <Menu.Item as='a'>Blog</Menu.Item>
-                */}
+                 <Menu.Item as='a' href='http://careers.lepsta.com' target='_new'>
+                  <Label as='span' color='yellow' empty circular style={{marginRight: '.4rem'}}></Label>
+                  We're hiring!
+                 </Menu.Item>
+                {/*<Menu.Item as='a'>Community</Menu.Item>
+                <Menu.Item as='a'>Blog</Menu.Item>*/}
                   <Button inverted size='small' onClick={this.show}>
                     Get Early Access
                   </Button>
