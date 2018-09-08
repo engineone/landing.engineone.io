@@ -61,7 +61,7 @@ export default class HomepageLayout extends Component {
                   <img
                     src="logo.svg"
                     style={{
-                    width: '170px',
+                    width: '150px',
                     paddingTop: '11px'
                   }}/>
                 </div>
@@ -97,7 +97,7 @@ export default class HomepageLayout extends Component {
           once={false}>
 
           {/* minHeight: '100vh', */}
-          <div className='legacy'>Click <a href="https://engineone.co">here</a> to visit the previous version of EngineOne</div>
+          <div className='legacy'>Click <a href="https://engineone.co">here</a> to visit EngineOne</div>
           <Segment
             className="home"
             textAlign='center'
@@ -106,42 +106,16 @@ export default class HomepageLayout extends Component {
             paddingBottom: 0
           }}
             vertical>
-            <Responsive
-              as={Image}
-              maxWidth={768}
-              src="/bg.svg"
-              style={{
-              position: "absolute",
-              width: '200%',
-              height: '86%',
-              top: 0,
-              right: 0,
-              left: 0,
-              bottom: 0
-            }}/>
-
-            <Responsive
-              as={Image}
-              minWidth={768}
-              src="/bg.svg"
-              style={{
-              position: "absolute",
-              width: '100%',
-              height: '81%',
-              top: 0,
-              right: 0,
-              left: 0,
-              bottom: 0
-            }}/>
+            
 
             <Container>
 
-              <Menu inverted borderless secondary pointing size='large'>
+              <Menu  borderless secondary pointing size='large'>
                 <div ><img
-                  src="logo-bw.svg"
+                  src="logo.svg"
                   style={{
         position: 'absolute',
-        width: '200px',
+        width: '150px',
         paddingTop: '12px'
       }}/></div>
                 <Menu.Item position='right'>
@@ -151,7 +125,7 @@ export default class HomepageLayout extends Component {
                  </Menu.Item>
                 {/*<Menu.Item as='a'>Community</Menu.Item>
                 <Menu.Item as='a'>Blog</Menu.Item>*/}
-                  <Button inverted size='small' onClick={this.show}>
+                  <Button size='small' onClick={this.show}>
                     Get Early Access
                   </Button>
                 </Menu.Item>
@@ -189,7 +163,8 @@ export default class HomepageLayout extends Component {
                         inverted
                         as='h1'
                         style={{
-                        fontSize: '2em'
+                        fontSize: '2em',
+                        color: '#1B263F'
                       }}>
                         <span className="lang geek">Spend more time writing code, and less time managing it!</span>
                         <span className="lang eng">There are hidden costs in your software development process</span>
@@ -200,15 +175,16 @@ export default class HomepageLayout extends Component {
                         style={{
                         fontSize: '1em',
                         fontWeight: 'normal',
-                        margin: '1.2em 0'
+                        margin: '1.2em 0',
+                        color: '#1B263F'
                       }}>
                         <span className="lang geek">
-                          EngineOne is a blockchain-based version control and code syncing service that helps developers spend
+                          Lepsta is a version control and code syncing service that helps developers spend
                           more time coding and less time managing code by automating their code management
                           workflow.
                         </span>
                         <span className="lang eng">
-                          Hundreds of hours are lost to admin and code management tasks. EngineOne will reduce the time your
+                          Hundreds of hours are lost to admin and code management tasks. Lepsta will reduce the time your
                           developers spend on managing code by automating their workflow.
                         </span>
                       </Header>
@@ -274,7 +250,7 @@ export default class HomepageLayout extends Component {
                     paddingBottom: '17px'
                   }}>
 
-                  <Button primary inverted onClick={this.show} style={{color: '#fff'}}>
+                  <Button primary onClick={this.show} style={{color: '#fff'}}>
                     Get Early Access
                   </Button>
 
@@ -462,7 +438,7 @@ export default class HomepageLayout extends Component {
           <div style={{position: 'absolute', left: '50%'}}>
           <img src='seal.svg' style={{position: 'relative', top: '-140px', left:'-50%'}} />
           </div>
-          <Header as='h2' style={{paddingTop: '60px', paddingBottom: '10px'}} className='solution'>EngineOne is the solution!</Header>
+          <Header as='h2' style={{paddingTop: '60px', paddingBottom: '10px'}} className='solution'>Lepsta is the solution!</Header>
         </div>
 
         <Segment
@@ -504,13 +480,13 @@ export default class HomepageLayout extends Component {
                 <p>
                   <span className="lang geek">
                     You no longer need to keep an open terminal to run version control commands, or
-                    install fancy IDE plugins to help with version control. EngineOne version
+                    install fancy IDE plugins to help with version control. Lepsta version
                     controls your code automatically so you never have to deal with dirty branches
                     and manually checking files into version control.
                   </span>
                   <span className="lang eng">
                     At the end of the day, Managers and Clients measure success based on quality
-                    features delivered. EngineOne helps Developers eliminate manual procedures and
+                    features delivered. Lepsta helps Developers eliminate manual procedures and
                     enables them to focus on what they are hired to do...coding. By automating code
                     source workflow Developers will be more productive than ever before.
                   </span>
@@ -538,12 +514,12 @@ export default class HomepageLayout extends Component {
                 </Header>
                 <p>
                   <span className="lang geek">
-                    EngineOne picks up all the changes you are making to your code and syncs them up
+                    Lepsta picks up all the changes you are making to your code and syncs them up
                     to a secure cloud infrastructure. This ensures that you always have a safe copy
                     of your code guarded by us and available to you whenever you need a clean copy.
                   </span>
                   <span className="lang eng">
-                    EngineOne picks up all the changes your team is making and uploads them
+                    Lepsta picks up all the changes your team is making and uploads them
                     automatically to a secure public or private cloud. This ensures that you always
                     have a safe copy of your code and that is accessible to you whenever you need a
                     clean copy.
@@ -580,13 +556,13 @@ export default class HomepageLayout extends Component {
                 </Header>
                 <p>
                   <span className="lang geek">
-                    There is no need to wait for someone to commit and push their code! EngineOne
+                    There is no need to wait for someone to commit and push their code! Lepsta
                     keeps code copies eventually identical wherever the collaborators may be. This
                     way if someone in the team needs you to check their code, you don’t need to
                     clean up your working copy first. You just switch to their view of the code.
                   </span>
                   <span className="lang eng">
-                    By automatically syncing to cloud, EngineOne does not only securely backup code
+                    By automatically syncing to cloud, Lepsta does not only securely backup code
                     but it also improves visibility within teams, ensuring that everyone is aware of
                     what everyone else is working on. Users can view each other's work and help one
                     another remotely. Because of this ability, teams can now collaborate on code
@@ -617,12 +593,12 @@ export default class HomepageLayout extends Component {
                 </Header>
                 <p>
                   <span className="lang geek">
-                    Because EngineOne syncs the code near real-time, it can detect when developers
+                    Because Lepsta syncs the code near real-time, it can detect when developers
                     are in a collision course. This helps prevent conflicts and helps collaborators
                     know when they are potentially working on the same feature.
                   </span>
                   <span className="lang eng">
-                    Code-conflicts are Developers' biggest nightmare. EngineOne has a unique feature
+                    Code-conflicts are Developers' biggest nightmare. Lepsta has a unique feature
                     that listens to potential code conflicts and prevents them by alerting users
                     before they occur.
                   </span>
@@ -660,13 +636,13 @@ export default class HomepageLayout extends Component {
                 </Header>
                 <p>
                   <span className="lang geek">
-                    EngineOne is designed to be offline first. And it takes that a step further by
+                    Lepsta is designed to be offline first. And it takes that a step further by
                     enabling a team of collaborators to continue syncing code with one another as
                     long as they are connected to the same network. So get stuff done with or
                     without internet connectivity.
                   </span>
                   <span className="lang eng">
-                    Your team can still collaborate without internet connectivity, EngineOne will
+                    Your team can still collaborate without internet connectivity, Lepsta will
                     continue syncing work to one of their computers provided they are on the same
                     network. When the internet reconnects, that computer will resume syncing to
                     cloud. Code is backed up (regardless of internet connection) using blockchain
@@ -690,7 +666,7 @@ export default class HomepageLayout extends Component {
               <Grid.Column width={8}>
                 <Header inverted as='h3'>How it Works</Header>
                 <p>
-                EngineOne is a code syncing service that helps Software Developers spend
+                Lepsta is a code syncing service that helps Software Developers spend
                 more time coding and less time managing code by automating their version
                 control workflow
                 </p>
@@ -747,12 +723,12 @@ export default class HomepageLayout extends Component {
                       <p>
                         <span className="lang geek">
                           Your code change history is stored even if you are working offline. And if you
-                          are working in a localised team, EngineOne's Self-Organising-Network allows
+                          are working in a localised team, Lepsta's Self-Organising-Network allows
                           teams to seamlessly collaborate online and offline.
                         </span>
                         <span className="lang eng">
                           Your code change history is stored even if you are working offline. And if you
-                          are working in a localised team, EngineOne allows teams to seamlessly
+                          are working in a localised team, Lepsta allows teams to seamlessly
                           collaborate online and offline.
                         </span>
                       </p>
@@ -770,11 +746,11 @@ export default class HomepageLayout extends Component {
                       <Header as='h4'>Early Conflict Detection</Header>                      
                       <p>
                         <span className="lang geek">
-                          Unlike other solutions, EngineOne alerts you of potential code conflicts before
+                          Unlike other solutions, Lepsta alerts you of potential code conflicts before
                           they become big problems.
                         </span>
                         <span className="lang eng">
-                          EngineOne alerts you of potential issues before they become big problems.
+                          Lepsta alerts you of potential issues before they become big problems.
                         </span>
                       </p>
                     </Grid.Column>
@@ -790,7 +766,7 @@ export default class HomepageLayout extends Component {
                     <Grid.Column width={13} style={{padding: '0'}}>
                       <Header as='h4'>Extendable</Header>                      
                       <p>
-                        Plugins allow new features to be added to the EngineOne platform.
+                        Plugins allow new features to be added to the Lepsta platform.
                       </p>
                     </Grid.Column>
                   </Grid.Row>
@@ -809,11 +785,11 @@ export default class HomepageLayout extends Component {
                       <Header as='h4'>Customisable Workflow</Header>                      
                       <p>
                         <span className="lang geek">
-                          EngineOne can be customised to assist with your version control workflow,
-                          whether you use git-flow or single-branch collaboration, EngineOne helps you maintain that freedom.
+                          Lepsta can be customised to assist with your version control workflow,
+                          whether you use git-flow or single-branch collaboration, Lepsta helps you maintain that freedom.
                         </span>
                         <span className="lang eng">
-                          EngineOne can be customised to assist with your software development workflow.
+                          Lepsta can be customised to assist with your software development workflow.
                         </span>
                       </p>
                     </Grid.Column>
@@ -830,12 +806,12 @@ export default class HomepageLayout extends Component {
                       <Header as='h4'>More Integrations</Header>                      
                       <p>
                         <span className="lang geek">
-                          EngineOne works with your existing tools, rather than against them. It supports
+                          Lepsta works with your existing tools, rather than against them. It supports
                           Git, SVN and Mercurial out the box. And with a powerful API, it can be
                           integrated with task managers and CI tools and other 3rd Party tools.
                         </span>
                         <span className="lang eng">
-                          EngineOne works with your existing tools, rather than against them. And with a
+                          Lepsta works with your existing tools, rather than against them. And with a
                           powerful API, it can be integrated with task managers and other 3rd Party tools.
                         </span>
                       </p>
@@ -866,15 +842,15 @@ export default class HomepageLayout extends Component {
           <Menu.Item as='a'>Terms of use</Menu.Item>
           <Menu.Item as='a'>Accessability</Menu.Item> */}
               <Menu.Item position='right'>
-                <Menu.Item as='a' href='https://twitter.com/_engineone' target='_blank'><Icon name='twitter' style={{
+                <Menu.Item as='a' href='https://twitter.com/_lepsta' target='_blank'><Icon name='twitter' style={{
         fontSize: '1.5em'
       }}/></Menu.Item>
-                <Menu.Item as='a' href='https://www.facebook.com/engine0ne' target='_blank'><Icon name='facebook' style={{
+                <Menu.Item as='a' href='https://www.facebook.com/lepsta' target='_blank'><Icon name='facebook' style={{
         fontSize: '1.5em'
       }}/></Menu.Item>
                 <Menu.Item
                   as='a'
-                  href='https://www.linkedin.com/company/engineone'
+                  href='https://www.linkedin.com/company/lepsta'
                   target='_blank'><Icon name='linkedin' style={{
         fontSize: '1.5em'
       }}/></Menu.Item>

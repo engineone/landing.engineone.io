@@ -16,7 +16,7 @@ body, .ui.header, p {
     text-align: left;
     color: white;
     font-size: 0.85em;
-    background: #F5A623;
+    background: #435977;
     position: absolute;
     top:0;
     z-index: 100;
@@ -154,11 +154,11 @@ body, .ui.header, p {
 
 .gradient {
     /* background:  linear-gradient(-90deg, #129EE6 0%, #3366CC 99%) !important; */
-    background: #333399 !important;
+    background: #3A506B !important;
     background-image: url("/white-line-bg.svg") !important;
     background-repeat: repeat-y !important;
     background-position: center !important;
-    border-bottom: 2px solid #4085DE !important;
+    border-bottom: 0px solid #4085DE !important;
 }
 
 .gradient .right {
@@ -186,13 +186,16 @@ body, .ui.header, p {
     border-bottom: none !important;
 }
 .ui.secondary.pointing.menu .active.item {
-    border-color: rgb(255, 255, 255) !important;
+    border-color: #1B263F !important;
 }
 .ui.button {
     /*border-radius: 2rem !important;*/
     font-weight: normal !important;
     color: #FFFFFF;
-    background: #4A90E2;
+    background: #20bdba;
+}
+.ui.button:hover {
+    background: #20bdba;
 }
 .ui.inverted.button {
     background: #FFFFFF;
@@ -200,7 +203,10 @@ body, .ui.header, p {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50) !important;
 }
 .ui.primary.button, .ui.primary.buttons .button {
-    background-color: #129EE6; 
+    background-color: #20bdba; 
+}
+.ui.primary.button:hover, .ui.primary.button:active {
+    background: #20bdba;
 }
 
 .floating {
@@ -213,7 +219,7 @@ body, .ui.header, p {
 .langbuttons {
     border-radius: .28rem;
     overflow: hidden;
-    border: 0px solid #129EE6; 
+    border: 0px solid #435977; 
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30) !important;
 }
 .langbuttons .ui.button {
@@ -235,7 +241,7 @@ body, .ui.header, p {
 .calculator {
     width: 94%;
     padding: 0rem;
-    background-color: rgba(27, 99, 162, .1);
+    background-color: #435977;
     margin: 1rem;
     margin-top: 4.3rem;
     border-radius: 3px !important;

@@ -45,7 +45,7 @@ export default class Connector extends Component {
     // left: x+"px"}}
 
     // style={{width:'100%'}}  preserveAspectRatio="none"
-    let strokeColor = white ? "#fff" : "#4A90E2";
+    let strokeColor = white ? "#fff" : "#435977";
 
 
     return (

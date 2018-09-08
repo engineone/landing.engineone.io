@@ -1,13 +1,10 @@
 
 <svg width="16px" height="145px" viewBox="0 0 16 145" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
     <g id="New-Version-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="New-Design-Copy-2" transform="translate(-732.000000, -2565.000000)">
-            <path d="M740.5,2567 L740.5,2635.02193" id="Line-22" stroke="#4A90E2" stroke-width="4" stroke-linecap="square"></path>
-            <path d="M740.5,2644.93497 L740.5,2693.02193" id="Line-22" stroke="#4A90E2" stroke-width="4" stroke-linecap="square" stroke-dasharray="7"></path>
-            <circle id="Oval-6" fill="#4A90E2" cx="740" cy="2702" r="8"></circle>
+            <path d="M740.5,2567 L740.5,2635.02193" id="Line-22" stroke="#435977" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M740.5,2644.93497 L740.5,2693.02193" id="Line-22" stroke="#435977" stroke-width="4" stroke-linecap="square" stroke-dasharray="7"></path>
+            <circle id="Oval-6" fill="#435977" cx="740" cy="2702" r="8"></circle>
         </g>
     </g>
 </svg>
