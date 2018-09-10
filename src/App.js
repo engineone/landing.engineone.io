@@ -42,7 +42,7 @@ export default class HomepageLayout extends Component {
     return (
       <div className={lang}>
 
-        <Modal size="small" open={open} onClose={this.close} closeIcon>
+        <Modal size="small" id='signup-modal' open={open} onClose={this.close} closeIcon>
           <Header content='Sign Up for Early Access'/>
           <Modal.Content>
             <SubscribeFrom />
@@ -72,7 +72,7 @@ export default class HomepageLayout extends Component {
                   padding: '3px'
                 }}>
                   <Menu.Item as='a'>&nbsp;</Menu.Item>
-                 <Menu.Item as='a' href='http://careers.lepsta.com' target='_new'><Label as='span' color='teal' empty circular style={{marginRight: '.4rem'}}></Label>We're hiring!</Menu.Item>
+                 <Menu.Item as='a' className='careers-link' href='http://careers.lepsta.com' target='_new'><Label as='span' color='teal' empty circular style={{marginRight: '.4rem'}}></Label>We're hiring!</Menu.Item>
                   
                   {/* <Menu.Item as='a'>Learn</Menu.Item>
                 <Menu.Item as='a'>Community</Menu.Item>
@@ -113,13 +113,12 @@ export default class HomepageLayout extends Component {
               <Menu  borderless secondary pointing size='large'>
                 <div ><img
                   src="logo.svg"
+                  className='logo'
                   style={{
-        position: 'absolute',
-        width: '150px',
-        paddingTop: '12px'
-      }}/></div>
+                    position: 'absolute'
+                  }}/></div>
                 <Menu.Item position='right'>
-                 <Menu.Item as='a' href='http://careers.lepsta.com' target='_new'>
+                 <Menu.Item as='a' className='careers-link' href='http://careers.lepsta.com' target='_new'>
                   <Label as='span' color='yellow' empty circular style={{marginRight: '.4rem'}}></Label>
                   We're hiring!
                  </Menu.Item>

@@ -66,7 +66,7 @@ export default class SubscribeForm extends React.Component {
   render() {
     const { action, messages, className, style, styles } = this.props
     const { status, msg } = this.state
-    const tweet = "I've just signed up for early access on EngineOne! https://engineone.io @_engineone";
+    const tweet = "I've just signed up for early access on Lepsta! https://lepsta.tech @_lepsta";
     const tweetUrl = "https://twitter.com/intent/tweet?text="+tweet;
     return (
         <Form
@@ -76,14 +76,14 @@ export default class SubscribeForm extends React.Component {
               <strong>First <Label circular color='blue'>20</Label> subscribers get awesome FREE t-shirts.</strong>
             </p>
             <Message hidden={status === "success"}>
-              EngineOne has entered the quality assurance stage of development. Sign up now 
+              Lepsta has entered the quality assurance stage of development. Sign up now 
               to be the first to know when it's publicly available. We’re really excited 
-              about what EngineOne can do for you!
+              about what Lepsta can do for you!
             </Message>
         {status === "sending" && <Dimmer active inverted><Loader size='medium'>Signing you up</Loader></Dimmer>}
         {status === "success" && <Message positive>
             <Message.Header>Thank you {this.name.value}! We have sent you a confirmation email.</Message.Header>
-            <p>Please help more people discover EngineOne by sharing this pre-written tweet:</p>
+            <p>Please help more people discover Lepsta by sharing this pre-written tweet:</p>
             <a href={tweetUrl} target="_blank"><Icon size='large' name='twitter' /> Tweet now</a>
         </Message>}
         {status === "error" && <Message negative>{this.state.msg}</Message>}

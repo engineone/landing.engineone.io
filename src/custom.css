@@ -343,3 +343,33 @@ body, .ui.header, p {
     position: absolute;
     background-color: #dadfe8;
   }
+
+.logo {
+    width: 150px;
+    padding-top: 12px;
+}
+
+@media only screen and (max-device-width : 640px) {
+    .careers-link {
+        display: none !important;
+    }
+
+    .home {
+        padding-top: 3rem !important;
+    }
+
+    .logo {
+        padding-top: 0 !important;
+    }
+
+    .dimmer {
+        margin-top: 0 !important;
+    }
+
+    .dimmer .modal {
+        position: static !important;
+        margin: 0 !important;
+        margin-top: 10px !important;
+        width: auto !important;
+    }
+}
