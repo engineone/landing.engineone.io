@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Connector from './Connector'
 import Corner from './Corner'
@@ -28,22 +28,22 @@ export default class HomepageLayout extends Component {
     lang: 'geek'
   } // geek or eng
 
-  show = () => this.setState({open: true})
-  close = () => this.setState({open: false})
+  show = () => this.setState({ open: true })
+  close = () => this.setState({ open: false })
 
-  hideFixedMenu = () => this.setState({visible: false})
-  showFixedMenu = () => this.setState({visible: true})
+  hideFixedMenu = () => this.setState({ visible: false })
+  showFixedMenu = () => this.setState({ visible: true })
 
-  setLang = (lang) => this.setState({lang: lang})
+  setLang = (lang) => this.setState({ lang: lang })
 
   render() {
-    const {visible, open, lang} = this.state;
+    const { visible, open, lang } = this.state;
 
     return (
       <div className={lang}>
 
         <Modal size="small" id='signup-modal' open={open} onClose={this.close} closeIcon>
-          <Header content='Sign Up for Early Access'/>
+          <Header content='Sign Up for Early Access' />
           <Modal.Content>
             <SubscribeFrom />
           </Modal.Content>
@@ -56,39 +56,44 @@ export default class HomepageLayout extends Component {
 
         {visible
           ? <Menu borderless fixed='top' size='large'>
-              <Container>
-                <div >
-                  <img
-                    src="logo.svg"
-                    style={{
+            <Container>
+              <div >
+                <img
+                  src="logo.svg"
+                  style={{
                     width: '150px',
                     paddingTop: '11px'
-                  }}/>
-                </div>
+                  }} />
+              </div>
 
-                <Menu.Item
-                  position='right'
-                  style={{
+              <Menu.Item
+                position='right'
+                style={{
                   padding: '3px'
                 }}>
-                  <Menu.Item as='a'>&nbsp;</Menu.Item>
-                 <Menu.Item as='a' className='careers-link' href='http://careers.lepsta.com' target='_new'><Label as='span' color='teal' empty circular style={{marginRight: '.4rem'}}></Label>We're hiring!</Menu.Item>
-                  
-                  {/* <Menu.Item as='a'>Learn</Menu.Item>
+                <Menu.Item as='a'>&nbsp;</Menu.Item>
+                <Menu.Item as='a' className='careers-link' href='http://careers.lepsta.com' target='_new'><Label as='span' color='teal' empty circular style={{ marginRight: '.4rem' }}></Label>We're hiring!</Menu.Item>
+
+                {/* <Menu.Item as='a'>Learn</Menu.Item>
                 <Menu.Item as='a'>Community</Menu.Item>
                 <Menu.Item as='a'>Blog</Menu.Item> */}
-                  <Button primary size='small' onClick={this.show}>
+                <div style={{ display: "flex" }}>
+                  <Button primary size='tiny'>
+                    Login 
+                  </Button>
+                  <Button primary size='tiny' onClick={this.show}>
                     Get Early Access
                   </Button>
-                </Menu.Item>
-              </Container>
-              {/*
+                </div>
+              </Menu.Item>
+            </Container>
+            {/*
           <Button.Group className='langbuttons' size='mini'>
               <Button inverted={lang!='geek'} primary={lang=='geek'} onClick={()=>this.setLang("geek")}>Developer</Button>
               <Button  inverted={lang!='eng'} primary={lang=='eng'} onClick={()=>this.setLang("eng")}>Business</Button>
             </Button.Group> */}
 
-            </Menu>
+          </Menu>
           : null}
 
         <Visibility
@@ -102,31 +107,35 @@ export default class HomepageLayout extends Component {
             className="home"
             textAlign='center'
             style={{
-            paddingTop: '4em',
-            paddingBottom: 0
-          }}
+              paddingTop: '4em',
+              paddingBottom: 0
+            }}
             vertical>
-            
+
 
             <Container>
 
-              <Menu  borderless secondary pointing size='large'>
+              <Menu borderless secondary pointing size='large'>
                 <div ><img
                   src="logo.svg"
                   className='logo'
                   style={{
                     position: 'absolute'
-                  }}/></div>
-                <Menu.Item position='right'>
-                 <Menu.Item as='a' className='careers-link' href='http://careers.lepsta.com' target='_new'>
-                  <Label as='span' color='yellow' empty circular style={{marginRight: '.4rem'}}></Label>
-                  We're hiring!
+                  }} /></div>
+                <Menu.Item position='right' style={{ width: "45%" }}>
+                  <Menu.Item as='a' className='careers-link' href='http://careers.lepsta.com' target='_new'>
+                    <Label as='span' color='yellow' empty circular style={{ marginRight: '.4rem' }}></Label>
+                    We're hiring!
                  </Menu.Item>
-                {/*<Menu.Item as='a'>Community</Menu.Item>
-                <Menu.Item as='a'>Blog</Menu.Item>*/}
-                  <Button size='small' onClick={this.show}>
-                    Get Early Access
+                  <Menu.Item as='a' className="community">Community</Menu.Item>
+                  <div style={{ display: "flex" }}>
+                    <Button size='tiny' onClick={() => alert("Route to login")}>
+                      Login 
+                    </Button>
+                    <Button size='tiny' onClick={this.show}>
+                      Get Early Access
                   </Button>
+                  </div>
                 </Menu.Item>
               </Menu>
             </Container>
@@ -138,33 +147,33 @@ export default class HomepageLayout extends Component {
                   <Grid.Column width={8}>
                     <div
                       style={{
-                      paddingTop: '4em',
-                      textAlign: 'left'
-                    }}>
-                    <Button.Group size="small" className='langbuttons'>
-                      <Button
-                        style={{
-                        width: '100px'
-                      }}
-                        inverted={lang != 'geek'}
-                        primary={lang == 'geek'}
-                        onClick={() => this.setLang("geek")}>Developer</Button>
-                      {/* <Button.Or text="<>"/> */}
-                      <Button
-                        style={{
-                        width: '100px'
-                      }}
-                        inverted={lang != 'eng'}
-                        primary={lang == 'eng'}
-                        onClick={() => this.setLang("eng")}>Business</Button>
-                    </Button.Group>
+                        paddingTop: '4em',
+                        textAlign: 'left'
+                      }}>
+                      <Button.Group size="small" className='langbuttons'>
+                        <Button
+                          style={{
+                            width: '100px'
+                          }}
+                          inverted={lang != 'geek'}
+                          primary={lang == 'geek'}
+                          onClick={() => this.setLang("geek")}>Developer</Button>
+                        {/* <Button.Or text="<>"/> */}
+                        <Button
+                          style={{
+                            width: '100px'
+                          }}
+                          inverted={lang != 'eng'}
+                          primary={lang == 'eng'}
+                          onClick={() => this.setLang("eng")}>Business</Button>
+                      </Button.Group>
                       <Header
                         inverted
                         as='h1'
                         style={{
-                        fontSize: '2em',
-                        color: '#1B263F'
-                      }}>
+                          fontSize: '2em',
+                          color: '#1B263F'
+                        }}>
                         <span className="lang geek">Spend more time writing code, and less time managing it!</span>
                         <span className="lang eng">There are hidden costs in your software development process</span>
                       </Header>
@@ -172,11 +181,11 @@ export default class HomepageLayout extends Component {
                         inverted
                         as='h2'
                         style={{
-                        fontSize: '1em',
-                        fontWeight: 'normal',
-                        margin: '1.2em 0',
-                        color: '#1B263F'
-                      }}>
+                          fontSize: '1em',
+                          fontWeight: 'normal',
+                          margin: '1.2em 0',
+                          color: '#1B263F'
+                        }}>
                         <span className="lang geek">
                           Lepsta is a version control and code syncing service that helps developers spend
                           more time coding and less time managing code by automating their code management
@@ -193,17 +202,17 @@ export default class HomepageLayout extends Component {
               </Responsive>*/}
                   </Grid.Column>
                   <Grid.Column only='tablet computer' width={8} textAlign="center">
-                  <div className="lang geek">
-                    <Image
-                      centered
-                      style={{
-                      width: '85%'
-                    }}
-                      src='man.svg'/>
-                  </div>
-                  <div className="lang eng calculator">
-                    <Calculator />
-                  </div>
+                    <div className="lang geek">
+                      <Image
+                        centered
+                        style={{
+                          width: '85%'
+                        }}
+                        src='man.svg' />
+                    </div>
+                    <div className="lang eng calculator">
+                      <Calculator />
+                    </div>
                   </Grid.Column>
 
                   <Grid.Column only='mobile' width={8} textAlign="center">
@@ -211,9 +220,9 @@ export default class HomepageLayout extends Component {
                       <Image
                         centered
                         style={{
-                        width: '85%'
-                      }}
-                        src='man.svg'/>
+                          width: '85%'
+                        }}
+                        src='man.svg' />
                     </div>
                     <div className="lang eng calculator">
                       <Calculator />
@@ -225,17 +234,17 @@ export default class HomepageLayout extends Component {
                   as={Grid.Row}
                   minWidth={992}
                   style={{
-                  padding: '4px'
-                }}>
+                    padding: '4px'
+                  }}>
 
                   <Grid.Column width={8}></Grid.Column>
                   <Grid.Column
                     width={4}
                     style={{
-                    padding: '0',
-                    marginLeft: '-3px'
-                  }}>
-                    <Connector right x={0} y={0} width={100} height={50}/>
+                      padding: '0',
+                      marginLeft: '-3px'
+                    }}>
+                    <Connector right x={0} y={0} width={100} height={50} />
                   </Grid.Column>
                 </Responsive>
 
@@ -245,12 +254,11 @@ export default class HomepageLayout extends Component {
                   <Grid.Column
                     textAlign="center"
                     style={{
-                    padding: 0,
-                    paddingBottom: '17px'
-                  }}>
-
-                  <Button primary onClick={this.show} style={{color: '#fff'}}>
-                    Get Early Access
+                      padding: 0,
+                      paddingBottom: '17px'
+                    }}>
+                    <Button primary onClick={this.show} style={{ color: '#fff' }}>
+                      Get Early Access
                   </Button>
 
                   </Grid.Column>
@@ -261,11 +269,11 @@ export default class HomepageLayout extends Component {
 
             <img
               style={{
-              position: 'relative',
-              left: '0px',
-              bottom: '-6px'
-            }}
-              src='line-top.svg'/>
+                position: 'relative',
+                left: '0px',
+                bottom: '-6px'
+              }}
+              src='line-top.svg' />
           </Segment>
         </Visibility>
 
@@ -273,20 +281,20 @@ export default class HomepageLayout extends Component {
           inverted
           className="gradient"
           style={{
-          margin: 0,
-          paddingTop: '1rem',
-          borderRadius: 0
-        }}>
+            margin: 0,
+            paddingTop: '1rem',
+            borderRadius: 0
+          }}>
           <Container>
             <Grid padded celled='internally' verticalAlign='top'>
               {/******* mobile only... ******/}
-              <Grid.Row only='mobile' style={{boxShadow: 'none'}}>
+              <Grid.Row only='mobile' style={{ boxShadow: 'none' }}>
                 <Grid.Column
                   width={8}
                   textAlign='left'
                   style={{
-                  paddingRight: '42px'
-                }}>
+                    paddingRight: '42px'
+                  }}>
                   <Header inverted as='h4'>
                     <span className="lang geek">
                       You might be overworking yourself!
@@ -320,8 +328,8 @@ export default class HomepageLayout extends Component {
                   width={8}
                   textAlign='right'
                   style={{
-                  paddingLeft: '42px'
-                }}>
+                    paddingLeft: '42px'
+                  }}>
 
                   <Header inverted as='h4'>
                     <span className="lang geek">
@@ -348,18 +356,18 @@ export default class HomepageLayout extends Component {
                 </Grid.Column>
               </Grid.Row>
 
-              <Grid.Row only='tablet computer' style={{boxShadow: 'none'}}>
+              <Grid.Row only='tablet computer' style={{ boxShadow: 'none' }}>
                 <Grid.Column width={8} textAlign='left'>
                   <img
                     src="ide.svg"
                     style={{
-                    float: 'left'
-                  }}/>
+                      float: 'left'
+                    }} />
                   <div
                     style={{
-                    marginLeft: '70px',
-                    marginRight: '25px'
-                  }}>
+                      marginLeft: '70px',
+                      marginRight: '25px'
+                    }}>
                     <Header inverted as='h3'>
                       <span className="lang geek">
                         You might be overworking yourself!
@@ -371,9 +379,9 @@ export default class HomepageLayout extends Component {
                     </Header>
                     <p>
                       <span className="lang geek">
-                        Your job as a developer is building great software, yet you spend a lot of time 
-                        managing code. You are constantly running commands to make your code accessible 
-                        to others, and resolving conflicts because someone didn't update their code regularly. 
+                        Your job as a developer is building great software, yet you spend a lot of time
+                        managing code. You are constantly running commands to make your code accessible
+                        to others, and resolving conflicts because someone didn't update their code regularly.
                         Also, you have to remember to never pull before committing. Who made those rules?
                       </span>
                       <span className="lang eng">
@@ -390,13 +398,13 @@ export default class HomepageLayout extends Component {
                   <img
                     src="safe.svg"
                     style={{
-                    float: 'right'
-                  }}/>
+                      float: 'right'
+                    }} />
                   <div
                     style={{
-                    marginRight: '70px',
-                    marginLeft: '25px'
-                  }}>
+                      marginRight: '70px',
+                      marginLeft: '25px'
+                    }}>
                     <Header inverted as='h3'>
                       <span className="lang geek">
                         Your code might be at risk!
@@ -428,23 +436,23 @@ export default class HomepageLayout extends Component {
 
         <div
           style={{
-          margin: '0 auto',
-          textAlign: 'center',
-          position: 'relative',
-          //left: '-4px',
-          //top: '-135px',
-        }}>
-          <div style={{position: 'absolute', left: '50%'}}>
-          <img src='seal.svg' style={{position: 'relative', top: '-140px', left:'-50%'}} />
+            margin: '0 auto',
+            textAlign: 'center',
+            position: 'relative',
+            //left: '-4px',
+            //top: '-135px',
+          }}>
+          <div style={{ position: 'absolute', left: '50%' }}>
+            <img src='seal.svg' style={{ position: 'relative', top: '-140px', left: '-50%' }} />
           </div>
-          <Header as='h2' style={{paddingTop: '60px', paddingBottom: '10px'}} className='solution'>Lepsta is the solution!</Header>
+          <Header as='h2' style={{ paddingTop: '60px', paddingBottom: '10px' }} className='solution'>Lepsta is the solution!</Header>
         </div>
 
         <Segment
           className="benifits"
           style={{
-          paddingBottom: '4em'
-        }}
+            paddingBottom: '4em'
+          }}
           vertical>
           <Grid container verticalAlign='middle'>
 
@@ -452,8 +460,8 @@ export default class HomepageLayout extends Component {
               padding: 0
             }}>
               <Grid.Column width={2}></Grid.Column>
-              <Grid.Column width={6} style={{paddingLeft: "5px"}}>
-                <Connector white={false} right x={0} y={0} width={100} height={50}/>
+              <Grid.Column width={6} style={{ paddingLeft: "5px" }}>
+                <Connector white={false} right x={0} y={0} width={100} height={50} />
               </Grid.Column>
             </Grid.Row>
 
@@ -461,9 +469,9 @@ export default class HomepageLayout extends Component {
               <Grid.Column mobile={6} tablet={4} computer={3}>
                 <Image
                   style={{
-                  width: '100%'
-                }}
-                  src='safe-pic.svg'/>
+                    width: '100%'
+                  }}
+                  src='safe-pic.svg' />
               </Grid.Column>
               <Grid.Column mobile={10} tablet={9} computer={8}>
                 <Header as='h3' style={{
@@ -492,13 +500,13 @@ export default class HomepageLayout extends Component {
                 </p>
               </Grid.Column>
               <Grid.Column tablet={2} computer={5} only='tablet computer'>
-                <Corner x={0} y={0} width={68} height={80}/>
+                <Corner x={0} y={0} width={68} height={80} />
               </Grid.Column>
             </Grid.Row>
 
             <Grid.Row>
               <Grid.Column textAlign='right' tablet={2} computer={5} only='tablet computer'>
-                <Corner right x={0} y={0} width={68} height={80}/>
+                <Corner right x={0} y={0} width={68} height={80} />
               </Grid.Column>
               <Grid.Column mobile={10} tablet={9} computer={8} textAlign="right">
                 <Header as='h3' style={{
@@ -528,9 +536,9 @@ export default class HomepageLayout extends Component {
               <Grid.Column mobile={6} tablet={4} computer={3}>
                 <Image
                   style={{
-                  width: '100%'
-                }}
-                  src='ide-pic.svg'/>
+                    width: '100%'
+                  }}
+                  src='ide-pic.svg' />
               </Grid.Column>
             </Grid.Row>
 
@@ -538,9 +546,9 @@ export default class HomepageLayout extends Component {
               <Grid.Column mobile={6} tablet={4} computer={3}>
                 <Image
                   style={{
-                  width: '100%'
-                }}
-                  src='community-pic.svg'/>
+                    width: '100%'
+                  }}
+                  src='community-pic.svg' />
               </Grid.Column>
               <Grid.Column mobile={10} tablet={9} computer={8}>
                 <Header as='h3' style={{
@@ -571,13 +579,13 @@ export default class HomepageLayout extends Component {
                 </p>
               </Grid.Column>
               <Grid.Column tablet={2} computer={5} only='tablet computer'>
-                <Corner x={0} y={0} width={68} height={80}/>
+                <Corner x={0} y={0} width={68} height={80} />
               </Grid.Column>
             </Grid.Row>
 
             <Grid.Row>
               <Grid.Column textAlign='right' tablet={2} computer={5} only='tablet computer'>
-                <Corner right x={0} y={0} width={68} height={80}/>
+                <Corner right x={0} y={0} width={68} height={80} />
               </Grid.Column>
               <Grid.Column mobile={10} tablet={9} computer={8} textAlign="right">
                 <Header as='h3' style={{
@@ -608,9 +616,9 @@ export default class HomepageLayout extends Component {
                 <Image
                   centered
                   style={{
-                  width: '80%'
-                }}
-                  src='proactive-pic.svg'/>
+                    width: '80%'
+                  }}
+                  src='proactive-pic.svg' />
               </Grid.Column>
             </Grid.Row>
 
@@ -618,9 +626,9 @@ export default class HomepageLayout extends Component {
               <Grid.Column mobile={6} tablet={4} computer={3}>
                 <Image
                   style={{
-                  width: '100%'
-                }}
-                  src='block-pic.svg'/>
+                    width: '100%'
+                  }}
+                  src='block-pic.svg' />
               </Grid.Column>
               <Grid.Column mobile={10} tablet={9} computer={8}>
                 <Header as='h3' style={{
@@ -677,8 +685,8 @@ export default class HomepageLayout extends Component {
         <Segment
           className="features"
           style={{
-          padding: '8em 0em'
-        }}
+            padding: '8em 0em'
+          }}
           vertical>
 
           <Grid columns='equal' container stackable verticalAlign='top'>
@@ -688,17 +696,17 @@ export default class HomepageLayout extends Component {
                   centered
                   src='line-bottom.svg'
                   style={{
-                  position: 'absolute',
-                  top: '-185px'
-                }}/>
+                    position: 'absolute',
+                    top: '-185px'
+                  }} />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
               <Grid.Column
                 style={{
-                textAlign: "center",
-                paddingBottom: "2em"
-              }}>
+                  textAlign: "center",
+                  paddingBottom: "2em"
+                }}>
                 <Header as='h2'>Features</Header>
               </Grid.Column>
             </Grid.Row>
@@ -707,10 +715,10 @@ export default class HomepageLayout extends Component {
               <Grid.Column >
                 <Grid container>
                   <Grid.Row>
-                    <Grid.Column width={3} style={{padding: '0'}}>
-                      <img src="feature-offline.svg"/>
+                    <Grid.Column width={3} style={{ padding: '0' }}>
+                      <img src="feature-offline.svg" />
                     </Grid.Column>
-                    <Grid.Column width={13} style={{padding: '0'}}>
+                    <Grid.Column width={13} style={{ padding: '0' }}>
                       <Header as='h4'>
                         <span className="lang geek">
                           Offline First
@@ -738,11 +746,11 @@ export default class HomepageLayout extends Component {
               <Grid.Column >
                 <Grid container>
                   <Grid.Row>
-                    <Grid.Column width={3} style={{padding: '0'}}>
-                      <img src="feature-detect.svg"/>                      
+                    <Grid.Column width={3} style={{ padding: '0' }}>
+                      <img src="feature-detect.svg" />
                     </Grid.Column>
-                    <Grid.Column width={13} style={{padding: '0'}}>
-                      <Header as='h4'>Early Conflict Detection</Header>                      
+                    <Grid.Column width={13} style={{ padding: '0' }}>
+                      <Header as='h4'>Early Conflict Detection</Header>
                       <p>
                         <span className="lang geek">
                           Unlike other solutions, Lepsta alerts you of potential code conflicts before
@@ -759,11 +767,11 @@ export default class HomepageLayout extends Component {
               <Grid.Column >
                 <Grid container>
                   <Grid.Row>
-                    <Grid.Column width={3} style={{padding: '0'}}>
-                      <img src="feature-extend.svg"/>                                          
+                    <Grid.Column width={3} style={{ padding: '0' }}>
+                      <img src="feature-extend.svg" />
                     </Grid.Column>
-                    <Grid.Column width={13} style={{padding: '0'}}>
-                      <Header as='h4'>Extendable</Header>                      
+                    <Grid.Column width={13} style={{ padding: '0' }}>
+                      <Header as='h4'>Extendable</Header>
                       <p>
                         Plugins allow new features to be added to the Lepsta platform.
                       </p>
@@ -773,15 +781,15 @@ export default class HomepageLayout extends Component {
               </Grid.Column>
             </Grid.Row>
 
-            <Grid.Row style={{marginTop: '1rem'}}>
+            <Grid.Row style={{ marginTop: '1rem' }}>
               <Grid.Column >
                 <Grid container>
                   <Grid.Row>
-                    <Grid.Column width={3} style={{padding: '0'}}>
-                      <img src="feature-custom.svg"/>                                                               
+                    <Grid.Column width={3} style={{ padding: '0' }}>
+                      <img src="feature-custom.svg" />
                     </Grid.Column>
-                    <Grid.Column width={13} style={{padding: '0'}}>
-                      <Header as='h4'>Customisable Workflow</Header>                      
+                    <Grid.Column width={13} style={{ padding: '0' }}>
+                      <Header as='h4'>Customisable Workflow</Header>
                       <p>
                         <span className="lang geek">
                           Lepsta can be customised to assist with your version control workflow,
@@ -798,11 +806,11 @@ export default class HomepageLayout extends Component {
               <Grid.Column>
                 <Grid container>
                   <Grid.Row>
-                    <Grid.Column width={3} style={{padding: '0'}}>
-                      <img src="feature-integrate.svg"/>                                                               
+                    <Grid.Column width={3} style={{ padding: '0' }}>
+                      <img src="feature-integrate.svg" />
                     </Grid.Column>
-                    <Grid.Column width={13} style={{padding: '0'}}>
-                      <Header as='h4'>More Integrations</Header>                      
+                    <Grid.Column width={13} style={{ padding: '0' }}>
+                      <Header as='h4'>More Integrations</Header>
                       <p>
                         <span className="lang geek">
                           Lepsta works with your existing tools, rather than against them. It supports
@@ -822,7 +830,7 @@ export default class HomepageLayout extends Component {
             </Grid.Row>
             <Grid.Row>
               <Grid.Column textAlign='center'>
-                <br/><br/><br/>
+                <br /><br /><br />
                 <Button primary size='small' onClick={this.show}>
                   Get Early Access
                 </Button>
@@ -842,17 +850,17 @@ export default class HomepageLayout extends Component {
           <Menu.Item as='a'>Accessability</Menu.Item> */}
               <Menu.Item position='right'>
                 <Menu.Item as='a' href='https://twitter.com/_lepsta' target='_blank'><Icon name='twitter' style={{
-        fontSize: '1.5em'
-      }}/></Menu.Item>
+                  fontSize: '1.5em'
+                }} /></Menu.Item>
                 <Menu.Item as='a' href='https://www.facebook.com/lepsta' target='_blank'><Icon name='facebook' style={{
-        fontSize: '1.5em'
-      }}/></Menu.Item>
+                  fontSize: '1.5em'
+                }} /></Menu.Item>
                 <Menu.Item
                   as='a'
                   href='https://www.linkedin.com/company/lepsta'
                   target='_blank'><Icon name='linkedin' style={{
-        fontSize: '1.5em'
-      }}/></Menu.Item>
+                    fontSize: '1.5em'
+                  }} /></Menu.Item>
               </Menu.Item>
             </Menu>
           </Container>
@@ -860,18 +868,18 @@ export default class HomepageLayout extends Component {
 
         {visible
           ? <div className='floating' title='Language'>
-              <Button.Group className='langbuttons' size=''>
-                <Button
-                  inverted={lang != 'geek'}
-                  primary={lang == 'geek'}
-                  onClick={() => this.setLang("geek")}>Developer</Button>
-                {/* <Button.Or text="<>"/> */}
-                <Button
-                  inverted={lang != 'eng'}
-                  primary={lang == 'eng'}
-                  onClick={() => this.setLang("eng")}>Business</Button>
-              </Button.Group>
-            </div>
+            <Button.Group className='langbuttons' size=''>
+              <Button
+                inverted={lang != 'geek'}
+                primary={lang == 'geek'}
+                onClick={() => this.setLang("geek")}>Developer</Button>
+              {/* <Button.Or text="<>"/> */}
+              <Button
+                inverted={lang != 'eng'}
+                primary={lang == 'eng'}
+                onClick={() => this.setLang("eng")}>Business</Button>
+            </Button.Group>
+          </div>
           : null}
 
       </div>

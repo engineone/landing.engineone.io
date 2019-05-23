@@ -354,6 +354,10 @@ body, .ui.header, p {
         display: none !important;
     }
 
+    .community {
+        display: none !important;
+    }
+
     .home {
         padding-top: 3rem !important;
     }
